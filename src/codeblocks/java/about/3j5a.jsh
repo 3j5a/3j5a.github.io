@@ -1,0 +1,7 @@
+"Java JavaScript Julia".toLowerCase().chars()
+                       .filter(ch -> ch == 'j' || ch == 'a')
+                       .boxed()
+                       .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.toList()))
+                       .entrySet().stream()
+                       .map(jaEntry -> jaEntry.getValue().size() + Character.toString(jaEntry.getKey()))
+                       .collect(Collectors.joining())
