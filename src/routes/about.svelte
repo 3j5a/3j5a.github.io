@@ -3,30 +3,10 @@
     import JavaScriptCodeBlock from "$lib/JavaScriptCodeBlock.svelte";
     import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
     import Tombstone from "$lib/Tombstone.svelte";
-                                                                                                                                                                
-    const codeJs = `"Java JavaScript Julia".toLowerCase().split("")
-                       .reduce((a, b) => a[b] !== undefined ? (a[b] += 1, a) : a, 
-                        {j: 0, a: 0, _: function() {return \`\${this.j}j\${this.a}a\`}})
-                       ._(); `
-
-    const codeJava = `"Java JavaScript Julia".toLowerCase().chars()
-                       .filter(ch -> ch == 'j' || ch == 'a')
-                       .boxed()
-                       .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.toList()))
-                       .entrySet().stream()
-                       .map(jaEntry -> jaEntry.getValue().size() + Character.toString(jaEntry.getKey()))
-                       .collect(Collectors.joining())`    
-
-    const codeJulia = `"Java JavaScript Julia" |> lowercase |> collect |> 
-                        chs -> reduce(function(dict, ch) haskey(dict, ch) ? (dict[ch] += 1; dict) : dict end, 
-                                      chs, init = Dict('j' => 0, 'a' => 0)) |> 
-                        collect |> 
-                        jaPairs -> map(jaPair -> string(jaPair[2], jaPair[1]), jaPairs) |> 
-                        join`
 
     export let codeBlocks;
 
-    </script>
+</script>
 
 <svelte:head>
   <style>

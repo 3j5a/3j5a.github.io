@@ -1,5 +1,7 @@
-import {read, readSync} from 'to-vfile';
 import { readdir } from 'fs/promises';
+import to_vfile from 'to-vfile';
+const { read } = to_vfile;
+
 
 const baseDir = "src/codeblocks";
 const languages = ["java", "javascript", "julia"];
