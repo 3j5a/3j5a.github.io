@@ -1,13 +1,11 @@
-<h4 class="caret"></h4>
+<span class="caret"></span>
 
 <style>
     .caret {
-        overflow: hidden;
+        height: 1.25em;
+        margin-top: 0.0625em;
         display: inline-block;
-        height: 1em;
         border-right: .75em solid;
-        white-space: nowrap;
-        margin: 0 auto;
         animation: 
             blink-caret 1.25s step-end infinite;
         }

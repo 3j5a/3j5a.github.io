@@ -1,0 +1,5 @@
+jshell PRINTING
+|  Welcome to JShell -- Version 18.0.1
+|  For an introduction type: /help intro
+
+jshell> println("Hello, World!")

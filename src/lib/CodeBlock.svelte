@@ -4,6 +4,8 @@
                 
     export let language;
     export let code;
+    export let header;
+    export let icon;
 
 </script>
 
@@ -11,4 +13,28 @@
   {@html grayscale}
 </svelte:head>
 
-<Highlight language={language} code={code} />    
+<div class="codeblock codeblock-{language.name}">
+  {#if header}
+    <header>
+      <h5>
+        <code>{header}</code>
+        {#if icon}
+          <i class="{icon}"></i>
+        {/if}
+      </h5>
+    </header>
+  {/if}
+  <Highlight language={language} code={code} />
+</div>
+
+<style>
+
+  h5 {
+    margin: 0;
+  }
+
+  h5 code {
+    font-weight: normal;
+  }
+
+</style>

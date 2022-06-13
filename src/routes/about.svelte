@@ -3,7 +3,7 @@
     import JavaScriptCodeBlock from "$lib/JavaScriptCodeBlock.svelte";
     import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
     import Tombstone from "$lib/Tombstone.svelte";
-
+                    
     export let codeBlocks;
 
 </script>
@@ -16,11 +16,15 @@
 </style>
 </svelte:head>
 
-<main class="about">
-    <h4>about</h4>
-    <p>Java, JavaScript, Julia Reflective Journal.</p>
-    <JavaCodeBlock code={codeBlocks.java[0].code}/>
-    <JavaScriptCodeBlock code={codeBlocks.javascript[0].code}/>
-    <JuliaCodeBlock code={codeBlocks.julia[0].code}/>
+<main>
+    <article class="about">
+        <header>
+            <h4>about</h4>
+        </header>
+        <p>Java, JavaScript, Julia Reflective Journal.</p>
+        <JavaCodeBlock code={codeBlocks.java[0].code}/>
+        <JavaScriptCodeBlock code={codeBlocks.javascript[0].code}/>
+        <JuliaCodeBlock code={codeBlocks.julia[0].code}/>
+    </article>
     <Tombstone/>
 </main>

@@ -9,5 +9,6 @@
         margin: 0 auto;
         border-color: rgb(188, 188, 188); 
         float: right;
+        margin-bottom: 1em;
     }
 </style>

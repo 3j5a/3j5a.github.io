@@ -3,6 +3,8 @@ body {
     font-family: IBMPlex;
     max-width: 740px;
     margin: 0 auto;
+    padding-left: 0.3125em;
+    padding-right: 0.3125em;
 }
 
 main {
@@ -22,25 +24,31 @@ main p {
     font-family: JetBrainsMono;
 }
 
+.codeblock pre {
+    margin: 0;
+}
+
 pre code.hljs {
     border: 1px solid white;
     border-radius: .2rem;
     width: auto;
     font-size: 0.85em;
+    padding: 0.75em !important;
 }
 
 .reference {
-    color: rgb(30 41 59);
-    background-color: rgb(241 245 249);    
-    border-color: rgb(226 232 240);
-    border-width: 1px;
+    color: black;
+    background-color:rgb(246, 246, 246);
     border-radius: 0.125rem;
+}
+
+a.reference, .reference a {
+    color: black;
     text-decoration: none;
 }
 
 .reference:hover {            
-    background-color: rgb(226 232 240);
-    border-color: rgb(100 116 139);
+    background-color:rgb(238, 238, 238);
 }
 
 .reference i {
@@ -50,15 +58,15 @@ pre code.hljs {
 
 @font-face {
     font-family: IBMPlex;
-    src: url("/fonts/IBMPlexSans-Regular.ttf") format('truetype');
+    src: url("/webfonts/IBMPlexSans-Regular.ttf") format('truetype');
 }
 
 @font-face {
     font-family: IBMPlexLight;
-    src: url("/fonts/IBMPlexSans-LightRegular.ttf") format('truetype');
+    src: url("/webfonts/IBMPlexSans-LightRegular.ttf") format('truetype');
 }
 
 @font-face {
     font-family: JetBrainsMono;
-    src: url("/fonts/JetBrainsMono-Regular.ttf") format('truetype');
+    src: url("/webfonts/JetBrainsMono-Regular.ttf") format('truetype');
 }

@@ -1,0 +1,18 @@
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.3 (2022-05-06)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> ☮️ = '\U262E'
+'☮': Unicode U+262E (category So: Symbol, other)
+
+julia> spread_peace(i) = ☮️^i
+spread_peace (generic function with 1 method)
+
+julia> spread_peace(10)
+"☮☮☮☮☮☮☮☮☮☮"
+

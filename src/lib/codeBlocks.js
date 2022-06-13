@@ -18,13 +18,13 @@ export default async function getCodeBlocks(page) {
                                    .flatMap(pageCodeBlocks => {
                                        let lang = pageCodeBlocks.language;
                                        return Promise.allSettled(pageCodeBlocks.files.map(file =>                                            
-                                                read(file, "utf8").then((vFile) => {return {language: lang, code: vFile.contents, name: file.substring(file.lastIndexOf("/") + 1)};})
+                                                read(file, "utf8").then((vFile) => {return {language: lang, code: vFile.contents, fileName: file.substring(file.lastIndexOf("/") + 1)};})
                                        ))
                                    }));
 
     let codeBlocks = codeBlocksPromises.filter(codeBlocksPromise => codeBlocksPromise.status === "fulfilled")
                         .flatMap(codeBlocksPromise => codeBlocksPromise.value.map(v => v.value))
-                          .reduce((a, b) => (a[b.language].push({name: b.name, code: b.code}), a), 
+                          .reduce((a, b) => (a[b.language].push({fileName: b.fileName, code: b.code}), a),
                                                 {java: [], javascript: [], julia: []});
     
     return codeBlocks;
