@@ -56,6 +56,11 @@ a.reference, .reference a {
     padding: 2px;
 }
 
+.page-link {
+    display: inline-block;
+    margin-right: 1em;
+}
+
 @font-face {
     font-family: IBMPlex;
     src: url("/webfonts/IBMPlexSans-Regular.ttf") format('truetype');

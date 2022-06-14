@@ -10,6 +10,7 @@
 <main>
     <section class="pages">
         <PageLink page="wayback" title="way back"/>
+        <PageLink page="flavors" title="flavors"/>
     </section>
     <Caret/>
 </main>

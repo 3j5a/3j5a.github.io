@@ -14,7 +14,7 @@
 </svelte:head>
 
 <main class="wayback">
-    <article class="intro">
+    <article>
         <header>
             <h4>way back</h4>
         </header>

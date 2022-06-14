@@ -4,7 +4,7 @@
 	export let page;
 </script>
 
-<header>
+<header class="page-link">
     <h4 class="reference">
         <a href="{base}/{page}">
             <i class="fa-solid fa-arrow-right"></i><i class="fa-solid fa-xmark"></i>
