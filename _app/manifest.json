@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7b45e453.js",
+    "file": "start-fe097b17.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -49,13 +49,14 @@
     ]
   },
   "src/routes/flavors.svelte": {
-    "file": "pages/flavors.svelte-6c3d04f0.js",
+    "file": "pages/flavors.svelte-6aa98dfe.js",
     "src": "src/routes/flavors.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-ec4507eb.js",
-      "_Caret-ae036809.js"
+      "_Caret-ae036809.js",
+      "_ExternalReference-3a6b90dd.js"
     ]
   },
   "src/routes/index.svelte": {
@@ -73,12 +74,13 @@
     ]
   },
   "src/routes/wayback.svelte": {
-    "file": "pages/wayback.svelte-4500f32d.js",
+    "file": "pages/wayback.svelte-245f5991.js",
     "src": "src/routes/wayback.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-ec4507eb.js",
+      "_ExternalReference-3a6b90dd.js",
       "_Tombstone-8bb79dbd.js"
     ],
     "css": [
@@ -107,6 +109,12 @@
     ],
     "css": [
       "assets/Caret-b7e8fbfa.css"
+    ]
+  },
+  "_ExternalReference-3a6b90dd.js": {
+    "file": "chunks/ExternalReference-3a6b90dd.js",
+    "imports": [
+      "_index-ec4507eb.js"
     ]
   }
 }
