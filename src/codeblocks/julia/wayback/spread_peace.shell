@@ -15,4 +15,3 @@ spread_peace (generic function with 1 method)
 
 julia> spread_peace(10)
 "☮☮☮☮☮☮☮☮☮☮"
-
