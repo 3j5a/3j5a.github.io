@@ -58,7 +58,10 @@ a.reference, .reference a {
 
 .page-link {
     display: inline-block;
-    margin-right: 1em;
+}
+
+.page-link:not(:first-child) {
+    margin-left: 0.75em;
 }
 
 @font-face {
