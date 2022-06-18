@@ -3,14 +3,10 @@
     import PageLink from "$lib/PageLink.svelte";
 </script>
 
-<svelte:head>
-    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
-</svelte:head>
-
 <main>
     <section class="pages">
         <PageLink page="wayback" title="way back"/>
-        <PageLink page="flavors" title="flavors"/>
+        <PageLink page="runtimes" title="runtimes"/>
     </section>
     <Caret/>
 </main>

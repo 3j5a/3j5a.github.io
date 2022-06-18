@@ -5,13 +5,10 @@
     import ShellCodeBlock from "$lib/ShellCodeBlock.svelte";
     import JavaScriptCodeBlock from "$lib/JavaScriptCodeBlock.svelte";
     import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
+    import ReplCodeBlock from "$lib//ReplCodeBlock.svelte";
 
     export let codeBlocks;
 </script>
-
-<svelte:head>
-    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
-</svelte:head>
 
 <main class="wayback">
     <article>
@@ -64,15 +61,18 @@
             <div class="java-hello-world-code">
                 <aside>
                     <div>
-                        <ShellCodeBlock code="java {codeBlocks.java[0].fileName}"/>
+                        <ShellCodeBlock code="java {codeBlocks.java[1].fileName}"/>
                     </div>
                     <div class="hello-world-file-lines">
-                        <JavaCodeBlock code="{codeBlocks.java[0].code}" header="{codeBlocks.java[0].fileName}" icon="fa-regular fa-file-lines"/>
+                        <JavaCodeBlock code="{codeBlocks.java[1].code}" header="{codeBlocks.java[1].fileName}" icon="fa-regular fa-file-lines"/>
                     </div>
                 </aside>
                 <aside>
                     <div>
-                        <ShellCodeBlock code="{codeBlocks.java[1].code}"/>
+                        <ShellCodeBlock code="{codeBlocks.java[0].code}"/>
+                    </div>
+                    <div class="jshell">
+                        <ReplCodeBlock language="java" code="{codeBlocks.java[2].code}"/>
                     </div>
                 </aside>
             </div>
@@ -171,12 +171,8 @@
         clear: both;
     }
 
-    .julia-repl-output {
+    .julia-repl-output, .jshell  {
         margin-top: 0.75em;
-    }
-
-    p {
-        padding-top: 0.25em;
     }
 
 </style>

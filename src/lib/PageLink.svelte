@@ -18,10 +18,17 @@
         font-weight: bolder;
         display: inline-block;
         padding: 0 3px 1px;
+        min-width: fit-content;
     }
 
     .reference i {
-        font-size: 0.75em;
         color: rgb(188, 188, 188);
+        min-width: 1em;
     }
+
+    .reference span {
+        display: inline-block;
+        min-width: 2em;
+    }
+
 </style>
