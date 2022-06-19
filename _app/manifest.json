@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-301ee14d.js",
+    "file": "start-23c3f2a7.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,8 @@
       "src/routes/about.svelte",
       "src/routes/index.svelte",
       "src/routes/runtimes.svelte",
-      "src/routes/wayback.svelte"
+      "src/routes/wayback.svelte",
+      "src/routes/why.svelte"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -50,20 +51,21 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-85f1b4b4.js",
+    "file": "pages/index.svelte-6fc8c80c.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
+      "_Caret-f6688236.js",
       "_paths-396f020f.js"
     ],
     "css": [
-      "assets/pages/index.svelte-58df3ea5.css"
+      "assets/pages/index.svelte-8bbc51ef.css"
     ]
   },
   "src/routes/runtimes.svelte": {
-    "file": "pages/runtimes.svelte-49e231e1.js",
+    "file": "pages/runtimes.svelte-b1dcbb67.js",
     "src": "src/routes/runtimes.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -73,7 +75,7 @@
       "_Tombstone-8bb0d681.js"
     ],
     "css": [
-      "assets/pages/runtimes.svelte-8442a94e.css"
+      "assets/pages/runtimes.svelte-520bcd16.css"
     ]
   },
   "src/routes/wayback.svelte": {
@@ -89,6 +91,16 @@
     ],
     "css": [
       "assets/pages/wayback.svelte-b6655231.css"
+    ]
+  },
+  "src/routes/why.svelte": {
+    "file": "pages/why.svelte-6bb75dc0.js",
+    "src": "src/routes/why.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-23842736.js",
+      "_Caret-f6688236.js"
     ]
   },
   "_index-23842736.js": {
@@ -113,6 +125,15 @@
     ],
     "css": [
       "assets/Tombstone-1cc81012.css"
+    ]
+  },
+  "_Caret-f6688236.js": {
+    "file": "chunks/Caret-f6688236.js",
+    "imports": [
+      "_index-23842736.js"
+    ],
+    "css": [
+      "assets/Caret-b7e8fbfa.css"
     ]
   },
   "_ExternalReference-bc918222.js": {
