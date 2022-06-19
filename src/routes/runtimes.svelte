@@ -82,5 +82,4 @@
     .vendors div {
         margin: 0.75em;
     }
-
 </style>

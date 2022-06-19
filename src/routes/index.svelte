@@ -7,6 +7,7 @@
     <section class="pages">
         <PageLink page="wayback" title="way back"/>
         <PageLink page="runtimes" title="runtimes"/>
+        <PageLink page="why" title="why"/>
     </section>
     <Caret/>
 </main>
