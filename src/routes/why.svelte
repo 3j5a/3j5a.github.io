@@ -96,6 +96,6 @@
     }
 
     .other-languages {
-        margin-top: -1.5em;
+        margin-top: -1em;
     }
 </style>
