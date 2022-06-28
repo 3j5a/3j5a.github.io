@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-23c3f2a7.js",
+    "file": "start-1baf5709.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -18,7 +18,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-fe3116c2.js",
+    "file": "pages/__layout.svelte-74304664.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -27,7 +27,7 @@
       "_paths-396f020f.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-353a800c.css"
+      "assets/pages/__layout.svelte-bcd75629.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -40,67 +40,70 @@
     ]
   },
   "src/routes/about.svelte": {
-    "file": "pages/about.svelte-7e0c1153.js",
+    "file": "pages/about.svelte-f7df5b37.js",
     "src": "src/routes/about.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
       "_JuliaCodeBlock-a7ec74c4.js",
-      "_Tombstone-8bb0d681.js"
+      "_Tombstone-1659a52a.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-6fc8c80c.js",
+    "file": "pages/index.svelte-300b5991.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
-      "_Caret-f6688236.js",
       "_paths-396f020f.js"
     ],
     "css": [
-      "assets/pages/index.svelte-8bbc51ef.css"
+      "assets/pages/index.svelte-7f424833.css"
     ]
   },
   "src/routes/runtimes.svelte": {
-    "file": "pages/runtimes.svelte-b1dcbb67.js",
+    "file": "pages/runtimes.svelte-af739cdb.js",
     "src": "src/routes/runtimes.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
       "_ExternalReference-bc918222.js",
-      "_Tombstone-8bb0d681.js"
+      "_Tombstone-1659a52a.js"
     ],
     "css": [
       "assets/pages/runtimes.svelte-520bcd16.css"
     ]
   },
   "src/routes/wayback.svelte": {
-    "file": "pages/wayback.svelte-18287672.js",
+    "file": "pages/wayback.svelte-232b23eb.js",
     "src": "src/routes/wayback.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
       "_ExternalReference-bc918222.js",
-      "_Tombstone-8bb0d681.js",
+      "_Tombstone-1659a52a.js",
       "_JuliaCodeBlock-a7ec74c4.js"
     ],
     "css": [
-      "assets/pages/wayback.svelte-b6655231.css"
+      "assets/pages/wayback.svelte-95eba678.css"
     ]
   },
   "src/routes/why.svelte": {
-    "file": "pages/why.svelte-6bb75dc0.js",
+    "file": "pages/why.svelte-c8e4ebb3.js",
     "src": "src/routes/why.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-23842736.js",
-      "_Caret-f6688236.js"
+      "_ExternalReference-bc918222.js",
+      "_Tombstone-1659a52a.js"
+    ],
+    "css": [
+      "assets/pages/why.svelte-af692396.css"
     ]
   },
   "_index-23842736.js": {
@@ -118,22 +121,13 @@
       "assets/JuliaCodeBlock-c4e0bfee.css"
     ]
   },
-  "_Tombstone-8bb0d681.js": {
-    "file": "chunks/Tombstone-8bb0d681.js",
+  "_Tombstone-1659a52a.js": {
+    "file": "chunks/Tombstone-1659a52a.js",
     "imports": [
       "_index-23842736.js"
     ],
     "css": [
-      "assets/Tombstone-1cc81012.css"
-    ]
-  },
-  "_Caret-f6688236.js": {
-    "file": "chunks/Caret-f6688236.js",
-    "imports": [
-      "_index-23842736.js"
-    ],
-    "css": [
-      "assets/Caret-b7e8fbfa.css"
+      "assets/Tombstone-d09a2965.css"
     ]
   },
   "_ExternalReference-bc918222.js": {
