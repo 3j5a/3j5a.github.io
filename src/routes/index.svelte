@@ -20,5 +20,4 @@
     .pages {
         margin-right: 1em;
     }
-
 </style>

@@ -10,24 +10,26 @@
     export let codeBlocks;
 </script>
 
-<main class="wayback">
-    <article>
+<main>
+    <article class="wayback">
         <header>
             <h4>way back</h4>
         </header>
-        <p>
-            I've started learning and using <b>Java</b> just when the Wild Type West ended and
-            <ExternalReference href="https://en.wikipedia.org/wiki/Generics_in_Java" text="generics"/> were added to the language.
-        </p>
-        <p>
-            It was relatively around the same time that I started to take <b>JavaScript</b> seriously, especially with all
-            <ExternalReference href="https://www.oreilly.com/library/view/javascript-the-good/9780596517748" text="the good parts"/>.
-        </p>
-        <p>
-            <b>Julia</b> caught my eye around the time
-            <ExternalReference href="https://en.wikipedia.org/wiki/Project_Jupyter" text="Jupyter"/>
-            took off and I finally realized what "Ju" was all about... and besides why not learn another language that starts with "J" &#129300;?
-        </p>
+        <section>
+            <p>
+                I've started learning and using <b>Java</b> just when the Wild Type West ended and
+                <ExternalReference href="https://en.wikipedia.org/wiki/Generics_in_Java" text="generics"/> were added to the language.
+            </p>
+            <p>
+                It was relatively around the same time that I started to take <b>JavaScript</b> seriously, especially with all
+                <ExternalReference href="https://www.oreilly.com/library/view/javascript-the-good/9780596517748" text="the good parts"/>.
+            </p>
+            <p>
+                <b>Julia</b> caught my eye around the time
+                <ExternalReference href="https://en.wikipedia.org/wiki/Project_Jupyter" text="Jupyter"/>
+                took off and I finally realized what "Ju" was all about... and besides why not learn another language that starts with "J" &#129300;?
+            </p>
+        </section>
         <aside class="books">
             <div>
                 <p>
@@ -46,7 +48,7 @@
                 </p>
             </div>
         </aside>
-        <div>
+        <section>
             <p>
                 Back then Java didn't have a repl, so <ExternalReference href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#History" text="Hello, World!"/>
                 (still in use right? &#129488;) was full of WTF...
@@ -76,8 +78,8 @@
                     </div>
                 </aside>
             </div>
-        </div>
-        <div class="javascript-replace-all">
+        </section>
+        <section class="javascript-replace-all">
              <p>
                 I don't recall any particular code to run as a start for JavaScript.
                 But I do recall how cool I thought passing a function to another function was.
@@ -91,8 +93,8 @@
                     <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}"/>
                 </div>
             </aside>
-        </div>
-        <div class="julia">
+        </section>
+        <section class="julia">
             <p>
                 REPL was a natural starting point for Julia. To be honest it's the REPL, syntactic sugar
                 and Unicode names support that got me into the language. I get that it was designed to be (and it is)
@@ -115,17 +117,16 @@
                     </div>
                 </aside>
             </div>
-        </div>
-        <p>
-            And <b>interactivity</b> (that's where Julia also really shines for me) goes to a totally new level with
-            <ExternalReference href="https://github.com/fonsp/Pluto.jl" text="Pluto"/>
-        </p>
+            <p>
+                And <b>interactivity</b> (that's where Julia also really shines for me) goes to a totally new level with
+                <ExternalReference href="https://github.com/fonsp/Pluto.jl" text="Pluto"/>
+            </p>
+        </section>
     </article>
     <Tombstone/>
 </main>
 
 <style>
-
     article {
         margin-bottom: 0.5em;
     }
@@ -174,5 +175,4 @@
     .julia-repl-output, .jshell  {
         margin-top: 0.75em;
     }
-
 </style>

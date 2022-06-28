@@ -22,13 +22,12 @@
     }
 
     .reference i {
-        color: rgb(188, 188, 188);
-        min-width: 1em;
+        color: var(--reference-color);
+        min-width: 0.5em;
     }
 
     .reference span {
         display: inline-block;
         min-width: 2em;
     }
-
 </style>

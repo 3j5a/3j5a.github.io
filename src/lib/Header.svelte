@@ -20,8 +20,12 @@
 </header>    
 
 <style>
+    header {
+        border-bottom: 1px solid var(--header-color);
+    }
+
     .logo a, .about a {
-        color: rgb(188, 188, 188);
+        color: var(--header-color);
         text-decoration: none;
     }
 
@@ -39,9 +43,4 @@
         display: flex;
         justify-content: space-between;
     }
-
-    header {
-        border-bottom: 1px solid rgb(188, 188, 188);
-    }
-
 </style>

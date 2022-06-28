@@ -11,8 +11,8 @@
 <svelte:head>
   <style>
     .about code.hljs {
-    font-size: 0.6em;
-}
+        font-size: 0.6em;
+    }
 </style>
 </svelte:head>
 

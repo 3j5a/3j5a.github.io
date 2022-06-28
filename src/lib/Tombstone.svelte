@@ -4,11 +4,10 @@
     .tombstone {
         overflow: hidden;
         height: 1em;
+        margin: 0 auto 1em;
         border-right: .75em solid;
         white-space: nowrap;
-        margin: 0 auto;
-        border-color: rgb(188, 188, 188); 
+        border-color: var(--caret-color);
         float: right;
-        margin-bottom: 1em;
     }
 </style>

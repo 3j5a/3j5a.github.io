@@ -6,12 +6,23 @@
         margin-top: 0.0625em;
         display: inline-block;
         border-right: .75em solid;
-        animation: 
+        animation:
             blink-caret 1.25s step-end infinite;
         }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: rgb(188, 188, 188); }
-        }
+    :global(.dark-mode .caret) {
+        animation:
+            blink-caret-dark 1.25s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: var(--caret-color); }
+    }
+
+    @keyframes blink-caret-dark {
+        from, to { border-color: transparent }
+        50% { border-color: var(--caret-color-dark); }
+    }
+
 </style>
