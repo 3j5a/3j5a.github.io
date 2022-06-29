@@ -8,6 +8,7 @@
         <PageLink page="wayback" title="way back"/>
         <PageLink page="runtimes" title="runtimes"/>
         <PageLink page="why" title="why"/>
+        <PageLink page="viewsource" title="view source"/>
     </section>
     <Caret/>
 </main>
