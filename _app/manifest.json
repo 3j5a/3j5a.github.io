@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-f0b6ea14.js",
+    "file": "start-8f4e3d96.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -11,9 +11,9 @@
       "src/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/about.svelte",
+      "src/routes/bitbybyte.svelte",
       "src/routes/index.svelte",
       "src/routes/runtimes.svelte",
-      "src/routes/viewsource.svelte",
       "src/routes/wayback.svelte",
       "src/routes/why.svelte"
     ]
@@ -51,8 +51,18 @@
       "_Tombstone-1659a52a.js"
     ]
   },
+  "src/routes/bitbybyte.svelte": {
+    "file": "pages/bitbybyte.svelte-c393085f.js",
+    "src": "src/routes/bitbybyte.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-23842736.js",
+      "_Caret-a1ecd08d.js"
+    ]
+  },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-12ed57d0.js",
+    "file": "pages/index.svelte-da093276.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -77,16 +87,6 @@
     ],
     "css": [
       "assets/pages/runtimes.svelte-520bcd16.css"
-    ]
-  },
-  "src/routes/viewsource.svelte": {
-    "file": "pages/viewsource.svelte-4196d8dc.js",
-    "src": "src/routes/viewsource.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-23842736.js",
-      "_Caret-a1ecd08d.js"
     ]
   },
   "src/routes/wayback.svelte": {
