@@ -3,9 +3,9 @@
 </script>
 
 <main>
-    <article class="viewsource">
+    <article class="bitbybyte">
         <header>
-            <h4>view source</h4>
+            <h4>bit by byte</h4>
         </header>
         <Caret/>
     </article>
