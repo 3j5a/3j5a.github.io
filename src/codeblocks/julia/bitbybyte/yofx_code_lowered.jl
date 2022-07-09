@@ -1,0 +1,1 @@
+@code_lowered y(10)

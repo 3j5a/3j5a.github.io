@@ -6,6 +6,7 @@
     export let code;
     export let header;
     export let icon;
+    export let inline;
 
 </script>
 
@@ -13,7 +14,7 @@
   {@html grayscale}
 </svelte:head>
 
-<div class="codeblock codeblock-{language.name}">
+<div class="codeblock codeblock-{language.name} inline-{inline}">
   {#if header}
     <header>
       <h5>
@@ -35,6 +36,10 @@
 
   h5 code {
     font-weight: normal;
+  }
+
+  .inline-true {
+    display: inline-block !important;
   }
 
 </style>

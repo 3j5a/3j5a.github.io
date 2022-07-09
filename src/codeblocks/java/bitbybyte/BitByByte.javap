@@ -1,0 +1,15 @@
+Compiled from "BitByByte.java"
+public class bitbybyte.BitByByte {
+  public bitbybyte.BitByByte();
+    Code:
+       0: aload_0
+       1: invokespecial #1  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public int y(int);
+    Code:
+       0: iconst_3
+       1: iload_1
+       2: imul
+       3: ireturn
+}

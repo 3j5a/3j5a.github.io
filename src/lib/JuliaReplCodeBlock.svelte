@@ -3,8 +3,8 @@
     import julia from "svelte-highlight/languages/julia";
                         
     export let code;
-    export let inline;
-    
+    const prefix = "julia> ";
+
 </script>
 
-<CodeBlock language={julia} code={code} inline={inline}></CodeBlock>
+<CodeBlock language={julia} code={prefix + code}></CodeBlock>

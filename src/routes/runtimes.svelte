@@ -34,7 +34,7 @@
                 You can start and go a long way using your browser
                 as the runtime (<ExternalReference text="Lynx" href="https://lynx.invisible-island.net"/> not),
                 but <ExternalReference text="node" href="https://nodejs.org"/>
-                or <ExternalReference text="deno" href="https://deno.land"/> (ah, anagrams &#129299;) will get you at some point.
+                or <ExternalReference text="deno" href="https://deno.land"/> (ah, anagrams 🤓) will get you at some point.
             </p>
         </section>
         <section id="java">

@@ -1,0 +1,8 @@
+;  @ REPL[1]:1 within `y`
+define i64 @julia_y_339(i64 signext %0) #0 {
+top:
+; ┌ @ int.jl:88 within `*`
+   %1 = mul i64 %0, 3
+; └
+  ret i64 %1
+}

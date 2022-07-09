@@ -1,0 +1,8 @@
+        .text
+; ┌ @ REPL[1]:1 within `y`
+; │┌ @ int.jl:88 within `*`
+        leaq    (%rdi,%rdi,2), %rax
+; │└
+        retq
+        nopw    %cs:(%rax,%rax)
+; └

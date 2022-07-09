@@ -1,0 +1,1 @@
+ @code_native y(10)

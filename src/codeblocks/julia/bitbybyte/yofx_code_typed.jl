@@ -1,0 +1,1 @@
+@code_typed y(10)
