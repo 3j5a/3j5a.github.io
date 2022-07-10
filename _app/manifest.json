@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-663aacf7.js",
+    "file": "start-64848aca.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -14,6 +14,7 @@
       "src/routes/bitbybyte.svelte",
       "src/routes/index.svelte",
       "src/routes/runtimes.svelte",
+      "src/routes/typed.svelte",
       "src/routes/wayback.svelte",
       "src/routes/why.svelte"
     ]
@@ -68,16 +69,17 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-45e35ec6.js",
+    "file": "pages/index.svelte-19929c14.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-26bd3a29.js",
+      "_Caret-02cd0bf8.js",
       "_paths-396f020f.js"
     ],
     "css": [
-      "assets/pages/index.svelte-7f424833.css"
+      "assets/pages/index.svelte-ec3f16e7.css"
     ]
   },
   "src/routes/runtimes.svelte": {
@@ -92,6 +94,16 @@
     ],
     "css": [
       "assets/pages/runtimes.svelte-520bcd16.css"
+    ]
+  },
+  "src/routes/typed.svelte": {
+    "file": "pages/typed.svelte-c1354d6d.js",
+    "src": "src/routes/typed.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-26bd3a29.js",
+      "_Caret-02cd0bf8.js"
     ]
   },
   "src/routes/wayback.svelte": {
@@ -159,6 +171,15 @@
     "imports": [
       "_index-26bd3a29.js",
       "_JuliaCodeBlock-ea5037f9.js"
+    ]
+  },
+  "_Caret-02cd0bf8.js": {
+    "file": "chunks/Caret-02cd0bf8.js",
+    "imports": [
+      "_index-26bd3a29.js"
+    ],
+    "css": [
+      "assets/Caret-6ab3e1ae.css"
     ]
   }
 }
