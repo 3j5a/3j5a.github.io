@@ -9,6 +9,7 @@
         <PageLink page="runtimes" title="runtimes"/>
         <PageLink page="why" title="why"/>
         <PageLink page="bitbybyte" title="bit by byte"/>
+        <PageLink page="typed" title="typed"/>
     </section>
     <Caret/>
 </main>
