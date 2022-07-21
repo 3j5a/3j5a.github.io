@@ -8,6 +8,8 @@
     import LLVMCodeBlock from "$lib/LLVMCodeBlock.svelte";
     import AssemblerCodeBlock from "$lib/AssemblerCodeBlock.svelte";
     import Tombstone from "$lib/Tombstone.svelte";
+    import SideNote from "$lib/SideNote.svelte";
+    import CodeFrame from "$lib/CodeFrame.svelte";
 
     export let codeBlocks;
 </script>
@@ -22,12 +24,10 @@
             Source code is for humans. So you should use every bit of syntactic abilities of a programming
             language combined with your writing skills and strive to actually make it so.
             </p>
-            <aside>
-                <div>
-                    "Any fool can write code that a computer can understand. <br/>
-                    Good programmers write code that humans can understand." - <ExternalReference href="https://martinfowler.com/" text="Martin Fowler"/>
-                </div>
-            </aside>
+            <SideNote>
+                "Any fool can write code that a computer can understand. <br/>
+                Good programmers write code that humans can understand." - <ExternalReference href="https://martinfowler.com/" text="Martin Fowler"/>
+            </SideNote>
             <p>
                 Machines don't really care, they want machine code.
                 But there is an important intermediate representation before a source code gets there (if at all
@@ -36,8 +36,7 @@
         </section>
         <section id="java">
                 <p>
-                <b>
-                    Java</b> source code journey begins with
+                    <b>Java</b> source code journey begins with
                     <ExternalReference href="https://en.wikipedia.org/wiki/Javac" text="javac"/>. It's a <b>front-end</b>ish
                     compiler that turns java source code files into <b>bytecode</b> class files (it can also
                     process <ExternalReference href="https://en.wikipedia.org/wiki/Java_annotation" text="annotations"/>
@@ -46,27 +45,23 @@
                     <ExternalReference href="https://docs.oracle.com/en/java/javase/18/docs/specs/man/javap.html" text="javap"/> tool:
                 </p>
                 <div class="java-bitbybyte">
-                    <aside>
-                        <div>
-                            <ShellCodeBlock code="javac {codeBlocks.java[1].fileName}"/>
-                        </div>
-                        <div class="bitbybyte-file-lines">
+                    <CodeFrame>
+                        <ShellCodeBlock code="javac {codeBlocks.java[1].fileName}"/>
+                        <div slot="output">
                             <JavaCodeBlock code="{codeBlocks.java[1].code}" header="{codeBlocks.java[1].fileName}" icon="fa-regular fa-file-lines"/>
                         </div>
-                    </aside>
-                    <aside>
-                        <div>
-                            <ShellCodeBlock code="javap -c {codeBlocks.java[0].fileName}" icon="fa-solid fa-file-code"/>
-                        </div>
-                        <div class="bytecode">
+                    </CodeFrame>
+                    <CodeFrame>
+                        <ShellCodeBlock code="javap -c {codeBlocks.java[0].fileName}" icon="fa-solid fa-file-code"/>
+                        <div slot="output">
                             <JavaCodeBlock code="{codeBlocks.java[2].code}" header="&nbsp;"/>
                         </div>
-                    </aside>
+                    </CodeFrame>
                 </div>
                 <div>
                     <b>javap</b> -v option would give more details, but you can already see the things <b>javac</b> does for you,
                     like
-                    <div style="width: fit-content; margin-left: auto; margin-right: auto; font-size: 0.9em">
+                    <div style="width: fit-content; margin-left: auto; margin-right: auto;">
                         <JavaCodeBlock code='1: invokespecial #1  // Method java/lang/Object."<init>":()V'/>
                     </div>
                     which refers to the default constructor that compiler inserts for you. You can also get a
@@ -92,15 +87,13 @@
                             (<ExternalReference href="https://asm.ow2.io" text="ASM"/>, <ExternalReference href="https://www.javassist.org/" text="Javassist"/>), allowing things like
                             instrumenting existing classes or dynamically generating new ones.
                         </div>
-                    <aside style="margin-top: -1.25em">
-                        <div>
+                        <SideNote style="margin-top: -1.25em;">
                             Emphasis on <b>methods</b> here is intentional as methods <br/> actually run your program.<br/>
                             An entry point to a Java program execution <br/> is a method as well, aka <b>psvm</b> (or not 😐):
-                            <div>
+                            <div style="font-size: 1.25em">
                                 <JavaCodeBlock code="public static void main(String[] args) {'{'}...{'}'}"/>
                             </div>
-                        </div>
-                    </aside>
+                        </SideNote>
                     </div>
                 </div>
             </section>
@@ -114,28 +107,22 @@
                     <ExternalReference href="https://en.wikipedia.org/wiki/SpiderMonkey#TraceMonkey" text="TraceMonkey"/>
                     became the first JIT compiler for <b>JS</b>.
                 </p>
-                <aside>
-                    <div>
-                        Things were much simpler back then, not only SpiderMonkey was just an interpreter.<br/>
-                        JavaScript was also just a "View Page Source" away.
-                    </div>
-                </aside>
+                <SideNote>
+                    Things were much simpler back then, not only SpiderMonkey was just an interpreter.<br/>
+                    JavaScript was also just a "View Page Source" away.
+                </SideNote>
                 <div>
                     <p>Guess what happens before it gets to machine code though? Bytecode!</p>
                     <div class="javascript-bitbybyte">
-                        <aside>
-                            <div class="bitbybyte-file-lines">
-                                <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}" header="{codeBlocks.javascript[0].fileName}" icon="fa-regular fa-file-lines"/>
-                            </div>
-                        </aside>
-                        <aside>
-                            <div>
-                                <ShellCodeBlock code="node --print-bytecode --print-bytecode-filter=y {codeBlocks.javascript[0].fileName}" icon="fa-solid fa-file-code"/>
-                            </div>
-                            <div class="bytecode">
+                        <CodeFrame>
+                            <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}" header="{codeBlocks.javascript[0].fileName}" icon="fa-regular fa-file-lines"/>
+                        </CodeFrame>
+                        <CodeFrame>
+                            <ShellCodeBlock code="node --print-bytecode --print-bytecode-filter=y {codeBlocks.javascript[0].fileName}"/>
+                            <div slot="output">
                                 <JavaScriptCodeBlock code="{codeBlocks.javascript[1].code}" />
                             </div>
-                        </aside>
+                        </CodeFrame>
                     </div>
                     <p>
                         So there is that <b>y</b> function again (same <b>triple</b> semantics). And we're viewing
@@ -150,13 +137,11 @@
                         <br/>If a function is used a lot (<b>hot spot</b>), <ExternalReference href="https://v8.dev/docs/turbofan" text="Turbofan"/>
                         takes its bytecode together with type feedback (oh, JS type system) and produces machine code.
                     </p>
-                    <aside style="float:right; margin-top: -1em;">
-                        <div>
-                            <b>V8</b> actually took a lot from
-                            <ExternalReference href="https://en.wikipedia.org/wiki/HotSpot_(virtual_machine)" text="HotSpot"/>
-                            JVM.<br/> So its code execution pipeline is very similar to that of JVM.
-                        </div>
-                    </aside>
+                    <SideNote style="float:right; margin-top: -1em;">
+                        <b>V8</b> actually took a lot from
+                        <ExternalReference href="https://en.wikipedia.org/wiki/HotSpot_(virtual_machine)" text="HotSpot"/>
+                        JVM.<br/> So its code execution pipeline is very similar to that of JVM.
+                    </SideNote>
                 </div>
                 </div>
             </section>
@@ -173,27 +158,23 @@
             <br/>Julia is super transparent about all the transformations (<b>code lowering</b>) that the source code goes through.
             </p>
             <div class="julia-bitbybyte">
-                <aside>
-                    <div>
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[0].code}"/>
-                    </div>
-                    <div>
+                <CodeFrame>
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[0].code}"/>
+                    <div slot="output">
                         <JuliaCodeBlock code="{codeBlocks.julia[1].code}"/>
                     </div>
-                </aside>
+                </CodeFrame>
             </div>
             And the first step is a lowered code construction that can be seen using
             <ExternalReference href="https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.@code_lowered"
                                text="@code_lowered"/> macro.
             <div class="julia-bitbybyte journey">
-                <aside>
-                    <div>
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[4].code}"/>
-                    </div>
-                    <div>
+                <CodeFrame>
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[4].code}"/>
+                    <div slot="output">
                         <JuliaCodeBlock code="{codeBlocks.julia[5].code}"/>
                     </div>
-                </aside>
+                </CodeFrame>
             </div>
             <p>
                 There is nothing about type information yet.
@@ -201,14 +182,12 @@
                                    text="@code_typed"/> macro allows to see a lower typed level:
             </p>
             <div class="julia-bitbybyte journey">
-                <aside>
-                    <div>
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[8].code}"/>
-                    </div>
-                    <div>
+                <CodeFrame>
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[8].code}"/>
+                    <div slot="output">
                         <JuliaCodeBlock code="{codeBlocks.julia[9].code}"/>
                     </div>
-                </aside>
+                </CodeFrame>
             </div>
             <p>
                 Next (lower still 😐) comes LLVM. <b>Julia</b> uses LLVM's C++ API to produce in memory LLVM IR.
@@ -216,14 +195,12 @@
                 macro prints it:
             </p>
             <div class="julia-bitbybyte journey">
-                <aside>
-                    <div>
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[2].code}"/>
-                    </div>
-                    <div>
+                <CodeFrame>
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[2].code}"/>
+                    <div slot="output">
                         <LLVMCodeBlock code="{codeBlocks.julia[3].code}"/>
                     </div>
-                </aside>
+                </CodeFrame>
             </div>
             <p>
                 At the bottom lies machine (native) code built by LLVM.
@@ -231,14 +208,12 @@
                 shows native assembly instructions:
             </p>
             <div class="julia-bitbybyte journey">
-                <aside>
-                    <div>
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[6].code}"/>
-                    </div>
-                    <div>
+                <CodeFrame>
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[6].code}"/>
+                    <div slot="output">
                         <AssemblerCodeBlock code="{codeBlocks.julia[7].code}"/>
                     </div>
-                </aside>
+                </CodeFrame>
             </div>
             <p>
                 And if you know Julia rules (performance tips) - it gets really-really fast
@@ -252,35 +227,9 @@
 
 <style>
 
-    aside {
-        padding: 0.25em;
-        margin-top: 0.25em;
-        font-size: 0.8em;
-        background-color: rgba(188, 188, 188, 0.2);
-        height: fit-content;
-        width: fit-content;
-    }
-
-    aside div {
-        background-color: white;
-        padding: 0.25em;
-    }
-
-    .java-bitbybyte aside div,
-    .javascript-bitbybyte aside div,
-    .julia-bitbybyte aside div{
-        background-color: initial;
-    }
-
     .java-bitbybyte, .javascript-bitbybyte, .julia-bitbybyte {
         display: flex;
         justify-content: space-evenly;
-        background-color: initial;
-    }
-
-    .julia-bitbybyte {
-        flex-wrap: wrap;
-        justify-content: space-around;
     }
 
     section#javascript, section#julia {

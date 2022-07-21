@@ -21,10 +21,16 @@
         <header>
             <h4>about</h4>
         </header>
-        <p>Java, JavaScript, Julia Reflective Journal.</p>
+        <p>Java, JavaScript, Julia <span class="reflective">reflective</span> Journal.</p>
         <JavaCodeBlock code={codeBlocks.java[0].code}/>
         <JavaScriptCodeBlock code={codeBlocks.javascript[0].code}/>
         <JuliaCodeBlock code={codeBlocks.julia[0].code}/>
     </article>
     <Tombstone/>
 </main>
+
+<style>
+    .reflective {
+        color: var(--header-color);
+    }
+</style>

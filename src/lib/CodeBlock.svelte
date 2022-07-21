@@ -14,7 +14,7 @@
   {@html grayscale}
 </svelte:head>
 
-<div class="codeblock codeblock-{language.name} inline-{inline}">
+<div class="codeblock codeblock-{language.name}">
   {#if header}
     <header>
       <h5>
@@ -38,8 +38,9 @@
     font-weight: normal;
   }
 
-  .inline-true {
-    display: inline-block !important;
+  header {
+    background-color: var(--aside-bacground-color);
+    font-size: 0.8em;
   }
 
 </style>

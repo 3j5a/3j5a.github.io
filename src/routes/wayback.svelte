@@ -5,7 +5,8 @@
     import ShellCodeBlock from "$lib/ShellCodeBlock.svelte";
     import JavaScriptCodeBlock from "$lib/JavaScriptCodeBlock.svelte";
     import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
-    import ReplCodeBlock from "$lib//ReplCodeBlock.svelte";
+    import SideNote from "$lib/SideNote.svelte";
+    import CodeFrame from "$lib/CodeFrame.svelte";
 
     export let codeBlocks;
 </script>
@@ -30,24 +31,22 @@
                 took off and I finally realized what "Ju" was all about... and besides why not learn another language that starts with "J" &#129300;?
             </p>
         </section>
-        <aside class="books">
-            <div>
-                <p>
-                    The book that I started learning Java with was
-                    <ExternalReference href="https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486" text="Thinking in Java"/>
-                    (yeah, 1k+ pages book)
-                </p>
-                <p>
-                    <ExternalReference href="https://www.manning.com/books/ajax-in-action" text="Ajax in Action"/> got me into JavaScript. 😐
-                </p>
-                <p>
-                    Since Julia wasn't the first language for me to learn, it was mostly about digging through the <ExternalReference href="https://docs.julialang.org/en/v1/manual/getting-started/" text="docs"/>,
-                    various articles and YouTube videos.
-                    But I found <ExternalReference href="https://learning.oreilly.com/library/view/hands-on-design-patterns/9781838648817" text="Hands-On Design Patterns and Best Practices with Julia"/>
-                    to be a really useful one.
-                </p>
-            </div>
-        </aside>
+        <SideNote>
+            <p>
+                The book that I started learning Java with was
+                <ExternalReference href="https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486" text="Thinking in Java"/>
+                (yeah, 1k+ pages book)
+            </p>
+            <p>
+                <ExternalReference href="https://www.manning.com/books/ajax-in-action" text="Ajax in Action"/> got me into JavaScript. 😐
+            </p>
+            <p>
+                Since Julia wasn't the first language for me to learn, it was mostly about digging through the <ExternalReference href="https://docs.julialang.org/en/v1/manual/getting-started/" text="docs"/>,
+                various articles and YouTube videos.
+                But I found <ExternalReference href="https://learning.oreilly.com/library/view/hands-on-design-patterns/9781838648817" text="Hands-On Design Patterns and Best Practices with Julia"/>
+                to be a really useful one.
+            </p>
+        </SideNote>
         <section>
             <p>
                 Back then Java didn't have a repl, so <ExternalReference href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#History" text="Hello, World!"/>
@@ -61,22 +60,18 @@
                 script.
             </p>
             <div class="java-hello-world-code">
-                <aside>
-                    <div>
-                        <ShellCodeBlock code="java {codeBlocks.java[1].fileName}"/>
-                    </div>
-                    <div class="hello-world-file-lines">
+                <CodeFrame>
+                    <ShellCodeBlock code="java {codeBlocks.java[1].fileName}"/>
+                    <div slot="output">
                         <JavaCodeBlock code="{codeBlocks.java[1].code}" header="{codeBlocks.java[1].fileName}" icon="fa-regular fa-file-lines"/>
                     </div>
-                </aside>
-                <aside>
-                    <div>
-                        <ShellCodeBlock code="{codeBlocks.java[0].code}"/>
+                </CodeFrame>
+                <CodeFrame>
+                    <ShellCodeBlock code="{codeBlocks.java[0].code}"/>
+                    <div slot="output">
+                        <JavaCodeBlock language="java" code="{codeBlocks.java[2].code}"/>
                     </div>
-                    <div class="jshell">
-                        <ReplCodeBlock language="java" code="{codeBlocks.java[2].code}"/>
-                    </div>
-                </aside>
+                </CodeFrame>
             </div>
         </section>
         <section class="javascript-replace-all">
@@ -88,11 +83,9 @@
                                     text="replaceAll"/>.
                 And now you get to use <ExternalReference href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" text="arrow function expressions"/>.
              </p>
-            <aside>
-                <div>
+                <CodeFrame style="margin: 0.5em auto 0;">
                     <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}"/>
-                </div>
-            </aside>
+                </CodeFrame>
         </section>
         <section class="julia">
             <p>
@@ -103,19 +96,15 @@
                 it is:
             </p>
             <div class="julia-repl">
-                <aside>
-                    <div>
-                        <ShellCodeBlock code="julia"/>
-                    </div>
-                    <div class="julia-repl-output">
+                <CodeFrame>
+                    <ShellCodeBlock code="julia"/>
+                    <div slot="output">
                         <JuliaCodeBlock code={codeBlocks.julia[1].code}/>
                     </div>
-                </aside>
-                <aside>
-                    <div>
+                </CodeFrame>
+                <CodeFrame>
                         <JuliaCodeBlock code={codeBlocks.julia[0].code}/>
-                    </div>
-                </aside>
+                </CodeFrame>
             </div>
             <p>
                 And <b>interactivity</b> (that's where Julia also really shines for me) goes to a totally new level with
@@ -127,52 +116,10 @@
 </main>
 
 <style>
-    article {
-        margin-bottom: 0.5em;
-    }
-
-    aside {
-        padding: 0.25em;
-        margin-top: 0.25em;
-        font-size: 0.8em;
-        background-color: rgba(188, 188, 188, 0.2);
-        height: fit-content;
-    }
-
-    aside div {
-        background-color: white;
-        height: fit-content;
-    }
-
-    aside.books div {
-        padding: 0.25em;
-    }
 
     .java-hello-world-code, .julia-repl {
         display: flex;
         justify-content: space-evenly;
-        background-color: initial;
     }
 
-    .java-hello-world-code aside div, .julia-repl aside div {
-        background-color: initial;
-    }
-
-    .hello-world-file-lines {
-        padding-top: 0.5em;
-    }
-
-    .javascript-replace-all aside {
-        width: fit-content;
-        margin: 0 auto;
-        margin-top: 0.5em;
-    }
-
-    .julia {
-        clear: both;
-    }
-
-    .julia-repl-output, .jshell  {
-        margin-top: 0.75em;
-    }
 </style>

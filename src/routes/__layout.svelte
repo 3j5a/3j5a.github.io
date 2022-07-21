@@ -11,11 +11,14 @@
 <slot></slot>
 
 <style>
-    :global(:root){
+    :global(:root) {
         --caret-color: rgb(188, 188, 188);
         --tombstone-color: rgb(188, 188, 188);
         --reference-color: rgb(188, 188, 188);
         --header-color: rgb(188, 188, 188);
+        --code-frame-color: rgb(188, 188, 188, 0.2);
+
+        --aside-bacground-color: rgb(188, 188, 188, 0.2);
 
         --caret-color-dark: rgb(132, 132, 132);
         --tombstone-color-dark: rgb(132, 132, 132);
