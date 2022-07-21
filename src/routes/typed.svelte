@@ -118,7 +118,7 @@
             Should you care though? Well, if you're designing a new programming language then wtf are you doing here 😕?
             Java isn't done with generics though: <ExternalReference href="https://openjdk.org/jeps/8261529" text="Universal Generics"/>
             are already on the horizon at the time of writing.
-            <SideNote style="margin: -1.5em 3em 0 auto">
+            <SideNote style="margin: -1.5em 0 0 auto">
                 Generics even got an excellent book devoted to them back then  -
                 <ExternalReference href="https://learning.oreilly.com/library/view/java-generics-and/0596527756/" text="Java Generics"/> <br/> with
                 Phillip Wadler as a co-author, also a co-creator of <ExternalReference href="https://homepages.inf.ed.ac.uk/wadler/gj/" text="GJ"/>
