@@ -10,16 +10,18 @@
 		<meta property="og:type" content="website">
 
 		<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/css/fontawesome-all.min.css" data-svelte="svelte-1k84m4k">
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-bcd75629.css">
-	<link rel="stylesheet" href="/_app/assets/pages/why.svelte-9832e5ba.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-1f83bc6c.css">
+	<link rel="stylesheet" href="/_app/assets/pages/why.svelte-fa06a461.css">
 	<link rel="stylesheet" href="/_app/assets/Tombstone-d09a2965.css">
-	<link rel="modulepreload" href="/_app/start-64848aca.js">
-	<link rel="modulepreload" href="/_app/chunks/index-26bd3a29.js">
+	<link rel="stylesheet" href="/_app/assets/SideNote-ae581ee6.css">
+	<link rel="modulepreload" href="/_app/start-d54caf53.js">
+	<link rel="modulepreload" href="/_app/chunks/index-4309a87d.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-f1b46885.js">
-	<link rel="modulepreload" href="/_app/pages/why.svelte-e7f830c4.js">
-	<link rel="modulepreload" href="/_app/chunks/ExternalReference-35d4248b.js">
-	<link rel="modulepreload" href="/_app/chunks/Tombstone-3dcb9a26.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-b23e87d7.js">
+	<link rel="modulepreload" href="/_app/pages/why.svelte-fb620ad8.js">
+	<link rel="modulepreload" href="/_app/chunks/ExternalReference-7c074159.js">
+	<link rel="modulepreload" href="/_app/chunks/Tombstone-76d80b10.js">
+	<link rel="modulepreload" href="/_app/chunks/SideNote-4d873226.js">
 	</head>
 	<body>
 		
@@ -34,7 +36,7 @@
         <div class="about svelte-1vi71vz"><a href="/about" class="svelte-1vi71vz">about</a></div></h3>
 </header>
 <main><article class="why"><header><h4>why</h4></header>
-        <section><div class="_1999 svelte-1qt56rw"><p>How about learning a new programming language every year? <br>
+        <section><div class="intro svelte-galopa"><p>How about learning a new programming language every year? <br>
                     And how about all the frameworks, tools, patterns, architecture
                     styles, best practices, devsecdatamlaiuiuxops? 🤯 <br>
                     A few programming languages appeared since I&#39;ve started and I&#39;ve tried (at least to learn)
@@ -46,19 +48,19 @@
                     , and also <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)" class="reference" target="_blank">Rust<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     and  <a href="https://en.wikipedia.org/wiki/Swift_(programming_language)" class="reference" target="_blank">Swift<i class="fa-solid fa-arrow-up-right-from-square"></i></a>.
                 </p>
-                <aside class="svelte-1qt56rw"><div class="svelte-1qt56rw">1999 was a good year:  <a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" class="reference" target="_blank">The Pragmatic Programmer<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
-                            <a href="https://en.wikipedia.org/wiki/The_Matrix" class="reference" target="_blank">The Matrix<i class="fa-solid fa-arrow-up-right-from-square"></i></a>... <br>
-                            Kosovo War, Second Chechen War and fcking Putin taking over as the acting President.<br>
-                            I take it back, it wasn&#39;t a good year at all 😐
-                        </div></aside></div>
-            <div><p class="other-languages svelte-1qt56rw">Must say that all of them are really cool languages and it was worthwhile
-                </p>
-                trying them out. But with <b>Java</b> and <b>JavaScript</b> already under my belt,
+                <aside class="svelte-1rhtdhm">1999 was a good year:  <a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" class="reference" target="_blank">The Pragmatic Programmer<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                    <a href="https://en.wikipedia.org/wiki/The_Matrix" class="reference" target="_blank">The Matrix<i class="fa-solid fa-arrow-up-right-from-square"></i></a>... <br>
+                    Kosovo War, Second Chechen War and fcking Putin taking over as the acting President.<br>
+                    I take it back, it wasn&#39;t a good year at all 😐
+                
+</aside></div>
+            <div class="jjj svelte-galopa">Must say that all of them are really cool languages and it was worthwhile <br> trying them out.
+                But with <b>Java</b> and <b>JavaScript</b> already under my belt,
                 I never felt the need to use any other language to get the job done, and
                 I guess more importantly I haven&#39;t had a job that needed another language (un or fortunately? 🤔).
                 <a href="https://en.wikipedia.org/wiki/Write_once,_run_anywhere" class="reference" target="_blank">Write once, run anywhere<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 and <a href="http://brendaneich.github.io/ModernWeb.tw-2015/#74" class="reference" target="_blank">always bet on JS<i class="fa-solid fa-arrow-up-right-from-square"></i></a>.
-                <p>I never thought of <b>Julia</b> as a general-purpose programming language. While it certainly is and you
+                <p id="julia">I never thought of <b>Julia</b> as a general-purpose programming language. While it certainly is and you
                     can write entire
                     <a href="https://www.youtube.com/watch?v=uLhXgt_gKJc" class="reference" target="_blank">applications and even microservices<i class="fa-solid fa-arrow-up-right-from-square"></i></a> (have they worn out yet?)
                     in Julia, there are lots of well established languages for that.
@@ -67,20 +69,21 @@
                     seems like a perfect tool to explore and work on <b>actual complex problems</b>, by allowing
                     eloquently expressing and efficiently simulating them.
                 </p>
-                <aside class="svelte-1qt56rw"><div class="svelte-1qt56rw">Someone said you should be sceptical of anything with “science” in its name,<br> but
-                        <a href="https://en.wikipedia.org/wiki/Computational_science" class="reference" target="_blank">Computational science<i class="fa-solid fa-arrow-up-right-from-square"></i></a> is what aims to solve those complex
-                        problems using computing powers.<br>
-                        Don&#39;t recall anything similar about &quot;thinking&quot;, so safely throwing
-                        <a href="https://computationalthinking.mit.edu/Spring21/" class="reference" target="_blank">Computational thinking<i class="fa-solid fa-arrow-up-right-from-square"></i></a> in here <br> for those of us not in science.
-                    </div></aside></div></section></article>
+                <aside class="svelte-1rhtdhm">Someone said you should be sceptical of anything with “science” in its name,<br> but
+                    <a href="https://en.wikipedia.org/wiki/Computational_science" class="reference" target="_blank">Computational science<i class="fa-solid fa-arrow-up-right-from-square"></i></a> is what aims to solve those complex
+                    problems using computing powers.<br>
+                    Don&#39;t recall anything similar about &quot;thinking&quot;, so safely throwing
+                    <a href="https://computationalthinking.mit.edu/Spring21/" class="reference" target="_blank">Computational thinking<i class="fa-solid fa-arrow-up-right-from-square"></i></a> in here <br> for those of us not in science.
+                
+</aside></div></section></article>
     <div class="tombstone svelte-1kbv3o5"></div>
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1is4uf4">
-		import { start } from "/_app/start-64848aca.js";
+		<script type="module" data-sveltekit-hydrate="1oudep3">
+		import { start } from "/_app/start-d54caf53.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1is4uf4"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1oudep3"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -90,8 +93,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-f1b46885.js"),
-						import("/_app/pages/why.svelte-e7f830c4.js")
+					import("/_app/pages/__layout.svelte-b23e87d7.js"),
+						import("/_app/pages/why.svelte-fb620ad8.js")
 				],
 				params: {},
 				routeId: "why"
