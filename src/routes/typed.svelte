@@ -50,27 +50,27 @@
             </p>
             <div class="wtfjs">
                 <CodeFrame>
-                    <NodeReplCodeBlock code="{codeBlocks.javascript[10].code}"/>
+                    <NodeReplCodeBlock code="{codeBlocks.javascript[11].code}"/>
                     <div slot="output">
-                        <JavaScriptCodeBlock code="{codeBlocks.javascript[11].code}"/>
+                        <JavaScriptCodeBlock code="{codeBlocks.javascript[12].code}"/>
                     </div>
                 </CodeFrame>
                 <CodeFrame>
-                    <NodeReplCodeBlock code="{codeBlocks.javascript[8].code}"/>
+                    <NodeReplCodeBlock code="{codeBlocks.javascript[9].code}"/>
                     <div slot="output">
-                        <JavaScriptCodeBlock code="{codeBlocks.javascript[9].code}"/>
+                        <JavaScriptCodeBlock code="{codeBlocks.javascript[10].code}"/>
                     </div>
                 </CodeFrame>
                 <CodeFrame>
-                    <NodeReplCodeBlock code="{codeBlocks.javascript[2].code}"/>
+                    <NodeReplCodeBlock code="{codeBlocks.javascript[3].code}"/>
                     <div slot="output">
-                        <JavaScriptCodeBlock code="{codeBlocks.javascript[3].code}"/>
+                        <JavaScriptCodeBlock code="{codeBlocks.javascript[4].code}"/>
                     </div>
                 </CodeFrame>
                 <CodeFrame>
-                    <NodeReplCodeBlock code="{codeBlocks.javascript[5].code}"/>
+                    <NodeReplCodeBlock code="{codeBlocks.javascript[6].code}"/>
                     <div slot="output">
-                        <JavaScriptCodeBlock code="{codeBlocks.javascript[6].code}"/>
+                        <JavaScriptCodeBlock code="{codeBlocks.javascript[7].code}"/>
                     </div>
                 </CodeFrame>
             </div>
@@ -78,7 +78,7 @@
                 And can a poor monkey dodge a snake and have enough mangoes and maybe a pie in a cruel JS world?
             </p>
             <CodeFrame style="margin: 0.25em auto 0;">
-                <JavaScriptCodeBlock code="{codeBlocks.javascript[4].code}"/>
+                <JavaScriptCodeBlock code="{codeBlocks.javascript[5].code}"/>
                 <div slot="output">
                     <JavaScriptCodeBlock code="🤔"/>
                 </div>
@@ -101,12 +101,15 @@
                 as well. How about <b>mango-infinity</b> for that monkey?
             </p>
             <CodeFrame style="margin: -1em 0 0 auto;">
-                <JavaScriptCodeBlock code="{codeBlocks.javascript[7].code}"/>
+                <JavaScriptCodeBlock code="{codeBlocks.javascript[8].code}"/>
             </CodeFrame>
             <p style="clear: both">
                 And I can't but agree that <ExternalReference href="https://en.wikipedia.org/wiki/Duck_typing" text="If it walks like a duck and it quacks like a duck, then it must be a duck"/>
-                is a cool no fuss usage oriented way to code.
+                is a no fuss usage way to code.
             </p>
+            <CodeFrame style="margin: -1em 0 0 auto;">
+                <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}"/>
+            </CodeFrame>
         </section>
         <section id="java">
             <b>Java</b> has come a long way enhancing its type system over time.
@@ -215,7 +218,7 @@
             of the value to which a variable refers.
             <SideNote style="float: right">
                 Julia's <ExternalReference href="https://docs.julialang.org/en/v1/manual/types/" text="types manual"/>
-                is an excellent place to get to know its types.
+                is a great place to learn about its type system.
             </SideNote>
         </section>
         <Caret/>
