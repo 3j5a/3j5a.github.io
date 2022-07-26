@@ -1,0 +1,1 @@
+primitive type Bool <: Integer 8 end

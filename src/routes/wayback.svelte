@@ -49,7 +49,7 @@
         </SideNote>
         <section>
             <p>
-                Back then Java didn't have a repl, so <ExternalReference href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#History" text="Hello, World!"/>
+                Back then <b>Java</b> didn't have a repl, so <ExternalReference href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#History" text="Hello, World!"/>
                 (still in use right? &#129488;) was full of WTF...
                 Remains so to be honest, but thanks to
                 <ExternalReference href="https://openjdk.java.net/jeps/330" text="JEP 330"/> you can now run a single file
@@ -76,7 +76,7 @@
         </section>
         <section class="javascript-replace-all">
              <p>
-                I don't recall any particular code to run as a start for JavaScript.
+                I don't recall any particular code to run as a start for <b>JavaScript</b>.
                 But I do recall how cool I thought passing a function to another function was.
                 I've found out about <strong>that</strong> in a bit weird way, using
                 <ExternalReference href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"
@@ -89,7 +89,7 @@
         </section>
         <section class="julia">
             <p>
-                REPL was a natural starting point for Julia. To be honest it's the REPL, syntactic sugar
+                REPL was a natural starting point for <b>Julia</b>. To be honest it's the REPL, syntactic sugar
                 and Unicode names support that got me into the language. I get that it was designed to be (and it is)
                 <ExternalReference href="https://julialang.org/benchmarks/" text="fast"/> and Oh, the <ExternalReference
                  href="https://docs.julialang.org/en/v1/manual/methods/" text="multiple dispatch"/>, but look how cool

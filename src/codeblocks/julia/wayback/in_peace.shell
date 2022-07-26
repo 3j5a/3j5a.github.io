@@ -1,4 +1,0 @@
-julia> for peace ∈ fill('\U262E', 10)
-           print(peace)
-       end
-☮☮☮☮☮☮☮☮☮☮

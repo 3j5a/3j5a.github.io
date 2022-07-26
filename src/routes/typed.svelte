@@ -7,6 +7,8 @@
     import SideNote from "$lib/SideNote.svelte";
     import JavaCodeBlock from "$lib/JavaCodeBlock.svelte";
     import ShellCodeBlock from "$lib/ShellCodeBlock.svelte";
+    import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
+    import JuliaReplCodeBlock from "$lib/JuliaReplCodeBlock.svelte";
 
     export let codeBlocks;
 </script>
@@ -133,7 +135,7 @@
                     <br/> BTW you probably shouldn't use it anymore in JS.
                 </SideNote>
                 It turned out to be much more than just a syntactic convenience, adding
-                (even if limited) support for non-denotable types. <b>var</b> allows to preserve
+                (even if limited) support for <b>non-denotable</b> types. <b>var</b> allows to preserve
                 type information, so the following is possible:
                 <CodeFrame style="margin: 0 auto;">
                     <ShellCodeBlock code="java {codeBlocks.java[5].fileName}"/>
@@ -170,10 +172,51 @@
                     <ExternalReference href="https://www.infoq.com/articles/data-oriented-programming-java/" text="DOP" />.
                 (Doh!)
                 </p>
+                <SideNote style="margin: -1.25em 0 0 auto;">
+                    <b>Java</b> is actually <b>strongly</b>, <b>explicitly</b> (but <b>type-inferred</b> where possible) and <b>statically</b> typed.
+                    <br/>
+                    <b>Nominal</b> by nature, it doesn't support <b>structural</b> types, but allows non-denotable types.
+                    <br/>
+                    It supports <b>parametrized types</b> (<b>generics</b>), but the info is "erased" at runtime.<br/>
+                    It has both primitive values and objects. <br/>
+                    <ExternalReference href="https://openjdk.org/jeps/401" text="Primitive Classes"/>
+                    and <ExternalReference href="https://openjdk.org/jeps/402" text="Classes for the Basic Primitives"/> are
+                    on the horizon at the time of writing.
+                </SideNote>
             </div>
         </section>
         <section id="julia">
-            <b>Julia</b>
+            <b>Julia</b> type system is humble and powerful: you may not even notice it's there,
+            but when explicitly needed, its expressiveness is ready to assist both you and the compiler.
+            So you can for example do:
+            <div class="julia-entry-type">
+                <CodeFrame>
+                    <JuliaCodeBlock code="{codeBlocks.julia[0].code}"/>
+                    <div slot="output">
+                        <JuliaReplCodeBlock code="{codeBlocks.julia[1].code}"/>
+                    </div>
+                </CodeFrame>
+                <CodeFrame>
+                    <JuliaCodeBlock code="{codeBlocks.julia[2].code}"/>
+                    <div slot="output">
+                        <JuliaReplCodeBlock code="{codeBlocks.julia[3].code}"/>
+                    </div>
+                </CodeFrame>
+            </div>
+            There are many things that I find interesting, like the ability to define custom primitive
+            types (doesn't mean you should) and the fact that Julia's standard primitive types are defined in the language itself.
+            <CodeFrame style="margin: 0 auto">
+                <JuliaCodeBlock code="{codeBlocks.julia[4].code}"/>
+                <div slot="output">
+                    <JuliaCodeBlock code="{codeBlocks.julia[5].code}"/>
+                </div>
+            </CodeFrame>
+            It's also worth noting that in Julia only values have types, so type of a variable is actually a type
+            of the value to which a variable refers.
+            <SideNote style="float: right">
+                Julia's <ExternalReference href="https://docs.julialang.org/en/v1/manual/types/" text="types manual"/>
+                is an excellent place to get to know its types.
+            </SideNote>
         </section>
         <Caret/>
     </article>
@@ -181,7 +224,7 @@
 
 <style>
 
-    .wtfjs {
+    .wtfjs, .julia-entry-type {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;

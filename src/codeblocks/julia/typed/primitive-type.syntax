@@ -1,0 +1,2 @@
+primitive type «name» «bits» end
+primitive type «name» <: «supertype» «bits» end

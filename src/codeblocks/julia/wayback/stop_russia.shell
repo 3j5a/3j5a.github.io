@@ -1,0 +1,12 @@
+julia> for war ∈ fill("russia", 9)
+            println("🛑$war")
+        end
+🛑russia
+🛑russia
+🛑russia
+🛑russia
+🛑russia
+🛑russia
+🛑russia
+🛑russia
+🛑russia
