@@ -17,7 +17,7 @@
                 <SideNote style="float: right; margin-top: -5.5em">
                     1999 was a good year: <br/> <ExternalReference href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" text="The Pragmatic Programmer"/>,
                     <br/><ExternalReference href="https://en.wikipedia.org/wiki/The_Matrix" text="The Matrix"/>... <br/>
-                    Kosovo War, Second Chechen <br/>  War and fcking Putin taking <br/> over as the acting President.<br/>
+                    Kosovo War, Second Chechen <br/>  War and fucking Putin taking <br/> over as the acting President.<br/>
                     I take it back, it wasn't a good <br/>  year at all 😐
                 </SideNote>
                 A few programming languages appeared since I've started and I've tried (at least to learn)
