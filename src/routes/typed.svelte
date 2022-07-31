@@ -105,9 +105,9 @@
             </CodeFrame>
             <p style="clear: both">
                 And I can't but agree that <ExternalReference href="https://en.wikipedia.org/wiki/Duck_typing" text="If it walks like a duck and it quacks like a duck, then it must be a duck"/>
-                is a no fuss usage way to code.
+                is a no fuss behavior oriented way to code. And since why not, how about some <b>Duckenstein</b>:
             </p>
-            <CodeFrame style="margin: -1em 0 0 auto;">
+            <CodeFrame style="margin: 0.25em auto;">
                 <JavaScriptCodeBlock code="{codeBlocks.javascript[0].code}"/>
             </CodeFrame>
         </section>
