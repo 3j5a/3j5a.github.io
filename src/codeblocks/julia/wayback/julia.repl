@@ -7,11 +7,17 @@
  _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 |__/                   |
 
-julia> 🛑️ = '\U1F6D1'
-"🛑"
+julia> im^2
+-1 + 0im
 
-julia> stop(it) = 🛑️*it
-stop (generic function with 1 method)
+julia> 𝑖sin(x) = im*sin(x)
+𝑖sin (generic function with 1 method)
 
-julia> stop("war")
-"🛑war"
+julia> ℯⁱˣ = x -> cos(x) + 𝑖sin(x)
+#1 (generic function with 1 method)
+
+julia> ℯⁱˣ(π)
+-1.0 + 1.2246467991473532e-16im
+
+julia> π |> ℯⁱˣ
+-1.0 + 1.2246467991473532e-16im

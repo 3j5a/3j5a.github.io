@@ -99,11 +99,8 @@
                 <CodeFrame>
                     <ShellCodeBlock code="julia"/>
                     <div slot="output">
-                        <JuliaCodeBlock code={codeBlocks.julia[1].code}/>
-                    </div>
-                </CodeFrame>
-                <CodeFrame>
                         <JuliaCodeBlock code={codeBlocks.julia[0].code}/>
+                    </div>
                 </CodeFrame>
             </div>
             <p>
