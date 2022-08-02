@@ -16,11 +16,11 @@
 	<link rel="stylesheet" href="/_app/assets/JuliaCodeBlock-d7898cfb.css">
 	<link rel="stylesheet" href="/_app/assets/CodeFrame-83009ef9.css">
 	<link rel="stylesheet" href="/_app/assets/SideNote-ae581ee6.css">
-	<link rel="modulepreload" href="/_app/start-cf67cb4b.js">
+	<link rel="modulepreload" href="/_app/start-2efe873d.js">
 	<link rel="modulepreload" href="/_app/chunks/index-4309a87d.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
 	<link rel="modulepreload" href="/_app/pages/__layout.svelte-b23e87d7.js">
-	<link rel="modulepreload" href="/_app/pages/typed.svelte-a9af4ab0.js">
+	<link rel="modulepreload" href="/_app/pages/typed.svelte-6a5d32a0.js">
 	<link rel="modulepreload" href="/_app/chunks/Caret-57cc30ac.js">
 	<link rel="modulepreload" href="/_app/chunks/ExternalReference-7c074159.js">
 	<link rel="modulepreload" href="/_app/chunks/JuliaCodeBlock-85438e7f.js">
@@ -254,33 +254,44 @@ mangoes.<span class="hljs-title function_">forEach</span>(<span class="hljs-func
 <div class="codeblock codeblock-shell">
   
   
-  <pre data-language="shell" class=" svelte-1xjucv4"><code class="hljs"><!-- HTML_TAG_START -->➜ ✗ java Var.java<!-- HTML_TAG_END --></code></pre>
+  <pre data-language="shell" class=" svelte-1xjucv4"><code class="hljs"><!-- HTML_TAG_START -->➜ ✗ java TmpDuck.java<!-- HTML_TAG_END --></code></pre>
 
 </div>
     <div class="output svelte-yjom51"><div slot="output">
 
-<div class="codeblock codeblock-java"><header class="svelte-u9bfjn"><h5 class="svelte-u9bfjn"><code class="svelte-u9bfjn">Var.java</code>
+<div class="codeblock codeblock-java"><header class="svelte-u9bfjn"><h5 class="svelte-u9bfjn"><code class="svelte-u9bfjn">TmpDuck.java</code>
         <i class="fa-regular fa-file-lines"></i></h5></header>
   
   
   <pre data-language="java" class=" svelte-1xjucv4"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">package</span> typed;
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Var</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TmpDuck</span> {
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">var</span> <span class="hljs-variable">var</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>() { <span class="hljs-type">int</span> x; }; <span class="hljs-comment">//var isn&#x27;t a keyword</span>
-        <span class="hljs-keyword">var</span>.x = <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String... args)</span> {
+        <span class="hljs-type">var</span> <span class="hljs-variable">duck</span> <span class="hljs-operator">=</span> (Quacks &amp; Waddles) Thing::create;
+        <span class="hljs-type">var</span> <span class="hljs-variable">wolf</span> <span class="hljs-operator">=</span> (Howls &amp; Trots) Thing::create;
+        <span class="hljs-type">var</span> <span class="hljs-variable">wereduck</span> <span class="hljs-operator">=</span> (duck &amp; Howls &amp; Trots) Thing::create;
+    }
 
-        <span class="hljs-type">var</span> <span class="hljs-variable">hi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>() { <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;¡Hola!&quot;</span>; }};
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Quacks</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thing</span> {
+        <span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quack</span><span class="hljs-params">()</span> { System.out.println(<span class="hljs-string">&quot;quack&quot;</span>); }
+    }
 
-        <span class="hljs-comment">/*
-         by all means use a properly named
-         local record class if you need stuff like this
-        */</span>
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Waddles</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thing</span> {
+        <span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">waddle</span><span class="hljs-params">()</span> { System.out.println(<span class="hljs-string">&quot;waddle&quot;</span>); }
+    }
 
-        System.out.println(hi);
-        System.out.println(hi.getClass());
-        System.out.println(<span class="hljs-keyword">var</span>.getClass());
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Howls</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thing</span> {
+        <span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">howl</span><span class="hljs-params">()</span> { System.out.println(<span class="hljs-string">&quot;howl&quot;</span>); }
+    }
+
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Trots</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thing</span> {
+        <span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">trot</span><span class="hljs-params">()</span> { System.out.println(<span class="hljs-string">&quot;trot&quot;</span>); }
+    }
+
+    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Thing</span> {
+        <span class="hljs-keyword">void</span> <span class="hljs-title function_">__</span><span class="hljs-params">()</span>;
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">create</span><span class="hljs-params">()</span> {}
     }
 
 }
@@ -460,10 +471,10 @@ OpenJDK <span class="hljs-number">64</span>-Bit Server <span class="hljs-title f
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1vc2ber">
-		import { start } from "/_app/start-cf67cb4b.js";
+		<script type="module" data-sveltekit-hydrate="82fdsb">
+		import { start } from "/_app/start-2efe873d.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1vc2ber"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="82fdsb"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -474,12 +485,12 @@ OpenJDK <span class="hljs-number">64</span>-Bit Server <span class="hljs-title f
 				error: null,
 				nodes: [
 					import("/_app/pages/__layout.svelte-b23e87d7.js"),
-						import("/_app/pages/typed.svelte-a9af4ab0.js")
+						import("/_app/pages/typed.svelte-6a5d32a0.js")
 				],
 				params: {},
 				routeId: "typed"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="props">{"codeBlocks":{"java":[{"fileName":"HeadsOrTails.java","code":"package typed;\n\nimport typed.HeadsOrTails.Toss.Tails;\n\nimport static java.lang.System.out;\nimport static typed.HeadsOrTails.Toss.*;\n\npublic class HeadsOrTails {\n\n    sealed interface Toss {\n        record Heads() implements Toss {};\n        record Tails() implements Toss {};\n    }\n\n    public static void main(String[] args) {\n        var toss = Math.random() >= 0.5 ? new Tails() : new Heads();\n        out.println(\n                switch (toss) {\n                    case Heads() -> \"heads\";\n                    case Tails() -> \"tails\";\n                }\n        );\n    }\n}\n"},{"fileName":"HeadsOrTails.output","code":""},{"fileName":"HeadsOrTails.shell","code":" java --enable-preview --source 19 HeadsOrTails.java"},{"fileName":"JavaVersion.output","code":"openjdk version \"19-ea\" 2022-09-20\nOpenJDK Runtime Environment (build 19-ea+31-2203)\nOpenJDK 64-Bit Server VM (build 19-ea+31-2203, mixed mode, sharing)"},{"fileName":"JavaVersion.shell","code":"java -version"},{"fileName":"Var.java","code":"package typed;\n\npublic class Var {\n\n    public static void main(String[] args) {\n        var var = new Object() { int x; }; //var isn't a keyword\n        var.x = 10;\n\n        var hi = new Object() { public String toString() { return \"¡Hola!\"; }};\n\n        /*\n         by all means use a properly named\n         local record class if you need stuff like this\n        */\n\n        System.out.println(hi);\n        System.out.println(hi.getClass());\n        System.out.println(var.getClass());\n    }\n\n}\n"},{"fileName":"Var.output","code":"¡Hola!\nclass typed.Var$2\nclass typed.Var$1"}],"javascript":[{"fileName":"duck-typing.js","code":"let ifItWalksLikeADuck = it => typeof it.waddle === \"function\"\nlet itQuacksLikeADuck = it => typeof it.quack === \"function\"\nlet itMustBeADuck = it => ifItWalksLikeADuck(it) && itQuacksLikeADuck(it);\n\nlet duckenstein = it => {\n    it.__proto__.quack = () => console.log(\"quack\");\n    it.__proto__.waddle = () => console.log(\"waddle\");\n    return it;\n}\n\n[Infinity, false, \"not a duck\", /.*/, {}, Symbol(\"@\"), null, undefined].forEach(it => {\n    try {\n        it = duckenstein(it);\n        if (itMustBeADuck(it)) {\n            console.log(`${it.constructor.name}, ${it.toString()} - It's Aduck!`)\n        }\n    } catch (err) {\n        console.log(`${it} - I am alone and miserable. Only someone as ugly as I am could love me.`)\n    }\n})\n"},{"fileName":"floating-point-wtf.js","code":"0.017 + 0.001"},{"fileName":"floating-point-wtf.replout","code":"0.018000000000000002"},{"fileName":"hello-NaN.js","code":"\"hello \" + + \"world\""},{"fileName":"hello-NaN.replout","code":"'hello NaN'"},{"fileName":"hungry-monkey.js","code":"let mangoes = [Math.PI]\nmangoes[3] = \"🥭\";\nconsole.log(`${mangoes.length}`);\nmangoes[-1] = \"🐍\";\nmangoes[Infinity] = \"🥭\";\nmangoes.forEach((mango, index) => {\n    console.log(`🐒 eating ${mango} at ${index}`);\n});\n"},{"fileName":"magic-nines.js","code":"9_999_999_999_999_999"},{"fileName":"magic-nines.replout","code":"10000000000000000"},{"fileName":"mango-infinity.js","code":"function* mangoInfinityGenerator() {\n    for(let i = 0; i \u003C Infinity; i++) {\n        yield \"🥭\";\n    }\n}\nlet mangoInfinity = mangoInfinityGenerator();\nlet nextMango;\nwhile(nextMango = mangoInfinity.next().value) {\n    console.log(`🐒 eating ${nextMango}`)\n}\n"},{"fileName":"power-of-false.js","code":"Math.pow(10, false)"},{"fileName":"power-of-false.replout","code":"1"},{"fileName":"true-plus-true.js","code":"true + true"},{"fileName":"true-plus-true.replout","code":"2"}],"julia":[{"fileName":"casually-untyped.jl","code":"function halve(x)\n    x/2\nend"},{"fileName":"casually-untyped.replout","code":"halve(1)\n0.5\n"},{"fileName":"explicitly-typed.jl","code":"function halve(x)::Rational\n    x/2\nend"},{"fileName":"explicitly-typed.replout","code":"halve(1)\n1//2\n"},{"fileName":"primitive-type-example.jl","code":"primitive type Bool \u003C: Integer 8 end"},{"fileName":"primitive-type.syntax","code":"primitive type «name» «bits» end\nprimitive type «name» \u003C: «supertype» «bits» end"}]}}</script>
+	</script><script type="application/json" sveltekit:data-type="props">{"codeBlocks":{"java":[{"fileName":"HeadsOrTails.java","code":"package typed;\n\nimport typed.HeadsOrTails.Toss.Tails;\n\nimport static java.lang.System.out;\nimport static typed.HeadsOrTails.Toss.*;\n\npublic class HeadsOrTails {\n\n    sealed interface Toss {\n        record Heads() implements Toss {};\n        record Tails() implements Toss {};\n    }\n\n    public static void main(String[] args) {\n        var toss = Math.random() >= 0.5 ? new Tails() : new Heads();\n        out.println(\n                switch (toss) {\n                    case Heads() -> \"heads\";\n                    case Tails() -> \"tails\";\n                }\n        );\n    }\n}\n"},{"fileName":"HeadsOrTails.output","code":""},{"fileName":"HeadsOrTails.shell","code":" java --enable-preview --source 19 HeadsOrTails.java"},{"fileName":"JavaVersion.output","code":"openjdk version \"19-ea\" 2022-09-20\nOpenJDK Runtime Environment (build 19-ea+31-2203)\nOpenJDK 64-Bit Server VM (build 19-ea+31-2203, mixed mode, sharing)"},{"fileName":"JavaVersion.shell","code":"java -version"},{"fileName":"TmpDuck.java","code":"package typed;\n\npublic class TmpDuck {\n\n    public static void main(String... args) {\n        var duck = (Quacks & Waddles) Thing::create;\n        var wolf = (Howls & Trots) Thing::create;\n        var wereduck = (duck & Howls & Trots) Thing::create;\n    }\n\n    interface Quacks extends Thing {\n        default void quack() { System.out.println(\"quack\"); }\n    }\n\n    interface Waddles extends Thing {\n        default void waddle() { System.out.println(\"waddle\"); }\n    }\n\n    interface Howls extends Thing {\n        default void howl() { System.out.println(\"howl\"); }\n    }\n\n    interface Trots extends Thing {\n        default void trot() { System.out.println(\"trot\"); }\n    }\n\n    interface Thing {\n        void __();\n        static void create() {}\n    }\n\n}\n"},{"fileName":"Var.java","code":"package typed;\n\npublic class Var {\n\n    public static void main(String[] args) {\n        var var = new Object() { int x; }; //var isn't a keyword\n        var.x = 10;\n\n        var hi = new Object() { public String toString() { return \"¡Hola!\"; }};\n\n        /*\n         by all means use a properly named\n         local record class if you need stuff like this\n        */\n\n        System.out.println(hi);\n        System.out.println(hi.getClass());\n        System.out.println(var.getClass());\n    }\n\n}\n"},{"fileName":"Var.output","code":"¡Hola!\nclass typed.Var$2\nclass typed.Var$1"}],"javascript":[{"fileName":"duck-typing.js","code":"let ifItWalksLikeADuck = it => typeof it.waddle === \"function\"\nlet itQuacksLikeADuck = it => typeof it.quack === \"function\"\nlet itMustBeADuck = it => ifItWalksLikeADuck(it) && itQuacksLikeADuck(it);\n\nlet duckenstein = it => {\n    it.__proto__.quack = () => console.log(\"quack\");\n    it.__proto__.waddle = () => console.log(\"waddle\");\n    return it;\n}\n\n[Infinity, false, \"not a duck\", /.*/, {}, Symbol(\"@\"), null, undefined].forEach(it => {\n    try {\n        it = duckenstein(it);\n        if (itMustBeADuck(it)) {\n            console.log(`${it.constructor.name}, ${it.toString()} - It's Aduck!`)\n        }\n    } catch (err) {\n        console.log(`${it} - I am alone and miserable. Only someone as ugly as I am could love me.`)\n    }\n})\n"},{"fileName":"floating-point-wtf.js","code":"0.017 + 0.001"},{"fileName":"floating-point-wtf.replout","code":"0.018000000000000002"},{"fileName":"hello-NaN.js","code":"\"hello \" + + \"world\""},{"fileName":"hello-NaN.replout","code":"'hello NaN'"},{"fileName":"hungry-monkey.js","code":"let mangoes = [Math.PI]\nmangoes[3] = \"🥭\";\nconsole.log(`${mangoes.length}`);\nmangoes[-1] = \"🐍\";\nmangoes[Infinity] = \"🥭\";\nmangoes.forEach((mango, index) => {\n    console.log(`🐒 eating ${mango} at ${index}`);\n});\n"},{"fileName":"magic-nines.js","code":"9_999_999_999_999_999"},{"fileName":"magic-nines.replout","code":"10000000000000000"},{"fileName":"mango-infinity.js","code":"function* mangoInfinityGenerator() {\n    for(let i = 0; i \u003C Infinity; i++) {\n        yield \"🥭\";\n    }\n}\nlet mangoInfinity = mangoInfinityGenerator();\nlet nextMango;\nwhile(nextMango = mangoInfinity.next().value) {\n    console.log(`🐒 eating ${nextMango}`)\n}\n"},{"fileName":"power-of-false.js","code":"Math.pow(10, false)"},{"fileName":"power-of-false.replout","code":"1"},{"fileName":"true-plus-true.js","code":"true + true"},{"fileName":"true-plus-true.replout","code":"2"}],"julia":[{"fileName":"casually-untyped.jl","code":"function halve(x)\n    x/2\nend"},{"fileName":"casually-untyped.replout","code":"halve(1)\n0.5\n"},{"fileName":"explicitly-typed.jl","code":"function halve(x)::Rational\n    x/2\nend"},{"fileName":"explicitly-typed.replout","code":"halve(1)\n1//2\n"},{"fileName":"primitive-type-example.jl","code":"primitive type Bool \u003C: Integer 8 end"},{"fileName":"primitive-type.syntax","code":"primitive type «name» «bits» end\nprimitive type «name» \u003C: «supertype» «bits» end"}]}}</script>
 	</body>
 </html>
