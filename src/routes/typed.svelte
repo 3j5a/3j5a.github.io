@@ -1,5 +1,4 @@
 <script>
-    import Caret from "$lib/Caret.svelte";
     import ExternalReference from "$lib/ExternalReference.svelte";
     import NodeReplCodeBlock from "$lib/NodeReplCodeBlock.svelte";
     import JavaScriptCodeBlock from "$lib/JavaScriptCodeBlock.svelte";
@@ -9,6 +8,7 @@
     import ShellCodeBlock from "$lib/ShellCodeBlock.svelte";
     import JuliaCodeBlock from "$lib/JuliaCodeBlock.svelte";
     import JuliaReplCodeBlock from "$lib/JuliaReplCodeBlock.svelte";
+    import Tombstone from "$lib/Tombstone.svelte";
 
     export let codeBlocks;
 </script>
@@ -191,43 +191,81 @@
         <section id="julia">
             <b>Julia</b> type system is humble and powerful: you may not even notice it's there,
             but when explicitly needed, its expressiveness is ready to assist both you and the compiler.
-            So you can for example do:
             <div class="julia-entry-type">
-                <CodeFrame>
-                    <JuliaCodeBlock code="{codeBlocks.julia[0].code}"/>
-                    <div slot="output">
-                        <JuliaReplCodeBlock code="{codeBlocks.julia[1].code}"/>
-                    </div>
-                </CodeFrame>
-                <CodeFrame>
-                    <JuliaCodeBlock code="{codeBlocks.julia[2].code}"/>
-                    <div slot="output">
+                   <CodeFrame>
+                       <JuliaReplCodeBlock code="{codeBlocks.julia[1].code}"/>
+                       <div slot="output">
+                           <JuliaReplCodeBlock code="{codeBlocks.julia[2].code}"/>
+                       </div>
+                   </CodeFrame>
+                    <CodeFrame>
                         <JuliaReplCodeBlock code="{codeBlocks.julia[3].code}"/>
-                    </div>
-                </CodeFrame>
+                        <div slot="output">
+                            <JuliaReplCodeBlock code="{codeBlocks.julia[4].code}"/>
+                        </div>
+                    </CodeFrame>
             </div>
             There are many things that I find interesting, like the ability to define custom primitive
-            types (doesn't mean you should) and the fact that Julia's standard primitive types are defined in the language itself.
+            types (doesn't mean you should) and the fact that Julia's standard primitive types are defined in the language itself:
             <CodeFrame style="margin: 0 auto">
-                <JuliaCodeBlock code="{codeBlocks.julia[4].code}"/>
+                <JuliaCodeBlock code="{codeBlocks.julia[5].code}"/>
                 <div slot="output">
-                    <JuliaCodeBlock code="{codeBlocks.julia[5].code}"/>
+                    <JuliaCodeBlock code="{codeBlocks.julia[6].code}"/>
                 </div>
             </CodeFrame>
-            It's also worth noting that in Julia only values have types, so type of a variable is actually a type
+            It's also worth noting that in Julia <b>only values have types</b>, so type of a variable is actually a type
             of the value to which a variable refers.
             <SideNote style="float: right">
                 Julia's <ExternalReference href="https://docs.julialang.org/en/v1/manual/types/" text="types manual"/>
                 is a great place to learn about its type system.
             </SideNote>
+            <p>
+            Julia doesn't allow fields to be declared in <b>abstract types</b>, which (to be honest
+            surprisingly to me) is a really useful restriction that resolves
+                <ExternalReference href="https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem" text="Circle–ellipse problem"/>
+                by not allowing it in the first place. Moreover all <b>concrete types</b> (struct) are final.
+                So there is no inheritance per se (sorry interface inheritance), instead you get <b>behavior subtyping</b>:
+                a function defined for a supertype naturally handles its subtypes. So a kind of (<b>Any</b>) duck typing is possible.
+            </p>
+            <CodeFrame style="margin: -0.75em auto 0;">
+                <JuliaCodeBlock code="{codeBlocks.julia[0].code}"/>
+            </CodeFrame>
+            <p>
+                With first class support for functions and <b>type unions</b> it's possible to be
+                very specific about what behaviors a <b>method</b> (<ExternalReference href="https://docs.julialang.org/en/v1/manual/methods/" text="a definition of one possible behavior for a function"/>)
+                is willing to accept.
+            </p>
+            <CodeFrame style="margin: 0.25em auto 0;">
+                <JuliaCodeBlock code="{codeBlocks.julia[8].code}"/>
+            </CodeFrame>
+            <div class="julia-unions">
+                <CodeFrame style="margin: 0.25em auto 0;">
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[9].code}"/>
+                </CodeFrame>
+                <CodeFrame style="margin: 0.25em auto 0;">
+                    <JuliaReplCodeBlock code="{codeBlocks.julia[7].code}"/>
+                </CodeFrame>
+            </div>
+            <p>
+                And <ExternalReference href="https://www.youtube.com/watch?v=kc9HwsxE1OY"
+                                       text="unreasonable effectiveness of multiple method dispatch"/>
+                is also rooted in Julia's type system, and once again, Types manual is awesome.
+            </p>
+            <SideNote style="margin: -1.25em 0 0 auto;">
+                <b>Julia</b> is actually <b>strongly</b>, <b>implicitly</b> (<b>explicitly</b> when you care enough)
+                <br/>
+                and <b>dynamically</b> typed. It's <b>nominative</b> and <b>parametric</b>.
+                <br/>
+                All values in Julia are objects.
+            </SideNote>
         </section>
-        <Caret/>
+        <Tombstone/>
     </article>
 </main>
 
 <style>
 
-    .wtfjs, .julia-entry-type {
+    .wtfjs, .julia-entry-type, .julia-unions {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -235,6 +273,10 @@
 
     section#java, section#julia {
         margin-top: 0.5em;
+    }
+
+    section#julia {
+        margin-bottom: 0.75em;
     }
 
 </style>

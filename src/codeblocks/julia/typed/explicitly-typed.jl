@@ -1,3 +1,1 @@
-function halve(x)::Rational
-    x/2
-end
+double(x::Rational) = 2x

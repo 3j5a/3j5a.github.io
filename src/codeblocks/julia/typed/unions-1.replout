@@ -1,0 +1,4 @@
+move(sin, 3)
+ERROR: MethodError: no method matching move(::typeof(sin), ::Int64)
+Closest candidates are:
+  move(::Union{typeof(down), typeof(left), typeof(right), typeof(up)}, ::Int64)

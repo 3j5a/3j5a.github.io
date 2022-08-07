@@ -1,3 +1,1 @@
-function halve(x)
-    x/2
-end
+double(x) = 2x
