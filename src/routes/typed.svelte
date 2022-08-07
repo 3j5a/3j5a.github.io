@@ -31,7 +31,7 @@
                                    text="Propositions as Types"/>
             </SideNote>
         </section>
-        <section id="JavaScript">
+        <section id="javascript">
             <p>
                 <b>JavaScript</b> type system... JS type system... well it's formally there 😐.
                 But informally it feels like you're at a playground and nobody's watching, so you

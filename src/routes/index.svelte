@@ -10,6 +10,7 @@
         <PageLink page="why" title="why"/>
         <PageLink page="bitbybyte" title="bit by byte"/>
         <PageLink page="typed" title="typed"/>
+        <PageLink page="performance" title="performance"/>
     </section>
     <Caret/>
 </main>
