@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-4e7a94f0.js",
+    "file": "start-039534a9.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,9 @@
       "src/routes/about.svelte",
       "src/routes/bitbybyte.svelte",
       "src/routes/index.svelte",
+      "src/routes/performance.svelte",
       "src/routes/runtimes.svelte",
+      "src/routes/threads.svelte",
       "src/routes/typed.svelte",
       "src/routes/wayback.svelte",
       "src/routes/why.svelte"
@@ -74,16 +76,27 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-b3a3d3e5.js",
+    "file": "pages/index.svelte-4c7a205a.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-4309a87d.js",
+      "_Caret-57cc30ac.js",
       "_paths-396f020f.js"
     ],
     "css": [
-      "assets/pages/index.svelte-7f424833.css"
+      "assets/pages/index.svelte-ec3f16e7.css"
+    ]
+  },
+  "src/routes/performance.svelte": {
+    "file": "pages/performance.svelte-03ac3317.js",
+    "src": "src/routes/performance.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-4309a87d.js",
+      "_Caret-57cc30ac.js"
     ]
   },
   "src/routes/runtimes.svelte": {
@@ -100,8 +113,18 @@
       "assets/pages/runtimes.svelte-520bcd16.css"
     ]
   },
+  "src/routes/threads.svelte": {
+    "file": "pages/threads.svelte-0ab649a1.js",
+    "src": "src/routes/threads.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-4309a87d.js",
+      "_Caret-57cc30ac.js"
+    ]
+  },
   "src/routes/typed.svelte": {
-    "file": "pages/typed.svelte-18a6ab97.js",
+    "file": "pages/typed.svelte-a2483579.js",
     "src": "src/routes/typed.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -201,6 +224,15 @@
     ],
     "css": [
       "assets/SideNote-ae581ee6.css"
+    ]
+  },
+  "_Caret-57cc30ac.js": {
+    "file": "chunks/Caret-57cc30ac.js",
+    "imports": [
+      "_index-4309a87d.js"
+    ],
+    "css": [
+      "assets/Caret-6ab3e1ae.css"
     ]
   }
 }
