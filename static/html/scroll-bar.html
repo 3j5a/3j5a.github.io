@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>3j5a</title>
+    <link rel="icon" href="./../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="3j5a - java, javascript, julia">
+    <meta property="og:type" content="random">
+
+    <script>
+        const baseColor = 156;
+        const scrollbarClassName = "scrollbar";
+        const randRgb = () => Math.floor(Math.random() * baseColor) + 100;
+        const randomColor = () => `rgb(${randRgb()}, ${randRgb()}, ${randRgb()})`;
+
+        function getMaxScrollHeight() {
+            return window.innerHeight - 20;
+        }
+
+        function generateScrollbar(height, width) {
+            let scrollbar = document.createElement("div");
+            scrollbar.className = scrollbarClassName;
+
+            let color = randomColor();
+            let scrollbarStyle = scrollbar.style;
+            scrollbarStyle.scrollbarColor = `${color} transparent`;
+            scrollbarStyle.webkitScrollbar = "thin";
+            scrollbarStyle.webkitScrollbarTrack = "transparent";
+            scrollbarStyle.webkitScrollbarThumb = color;
+            scrollbarStyle.webkitScrollbarBackgroundColor = color;
+
+            scrollbarStyle.height = `${height}px`;
+            scrollbarStyle.overflowY = "scroll";
+            scrollbarStyle.width = `${width}px`;
+
+            let innerDiv = document.createElement("div");
+            innerDiv.style.height = "200%";
+            scrollbar.appendChild(innerDiv);
+
+            return scrollbar;
+        }
+
+        function addScrollbars(containerId, height, width = 18) {
+            let scroobarsContainer = document.getElementById(containerId)
+            let viewportWidth = window.innerWidth;
+            let viewportHeight = window.innerHeight;
+            let numberOfScrollbars = Math.floor(viewportWidth / width);
+            for (let i = 0; i < numberOfScrollbars; i++) {
+                let barHeight = height || Math.floor(Math.random() * getMaxScrollHeight());
+                let scrollbar = generateScrollbar(barHeight, width);
+                scroobarsContainer.appendChild(scrollbar);
+            }
+        }
+
+        let scrollIntervalId;
+
+        function scrollsCleanup() {
+            clearInterval(scrollIntervalId);
+            document.getElementById("container").innerHTML = "";
+        }
+
+        function scrollIt() {
+            let density = document.getElementById("bardensity").value;
+            let width = Math.max(20 - 20*density/100, 1);
+            
+            addScrollbars("container", undefined, width);
+
+            let scrollbars = document.querySelectorAll(`.${scrollbarClassName}`)
+            scrollbars.forEach(scrollbar => {
+                scrollbar.scrollTop = Math.floor(parseInt(scrollbar.style.height) * Math.random());
+            })
+            scrollIntervalId = setInterval(function () {
+                scrollbars.forEach(s => {
+                    jitter = 30 * Math.random();
+                    setTimeout(function () {
+                        s.scrollTop = s.scrollTop + jitter * Math.random() - jitter / 2;
+                    }, 100 + 900 * Math.random());
+                });
+            }, 1000);
+
+        }
+
+
+        function normalScrollbarChart() {
+
+            addScrollbars("container", 40);
+
+            function drawFromNormal() {
+                let u = 0, v = 0;
+                while (u === 0) u = Math.random();
+                while (v === 0) v = Math.random();
+                let normal = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+                normal = normal / 10.0 + 0.5;
+                if (normal > 1 || normal < 0) return generateRandomNormal();
+                return normal;
+            }
+
+            scrollIntervalId = setInterval(function () {
+                let scrollbars = document.querySelectorAll(`.${scrollbarClassName}`);
+                let scrollbar = scrollbars.item(drawFromNormal() * scrollbars.length);
+                let currentHeight = parseInt(scrollbar.style.height);
+                if (currentHeight < getMaxScrollHeight()) {
+                    scrollbar.style.height = `${currentHeight + 5}px`;
+                } else {
+                    clearInterval(scrollIntervalId);
+                }
+            }, 10);
+
+        }
+
+
+    </script>
+
+    <style>
+        #container {
+            display: flex;
+            width: 100%;
+        }
+
+        datalist {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 200px;
+        }
+
+        option {
+            margin-top: -20px;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        label[for="bardensity"] {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .just-scroll-with-it {
+            display: flex;
+            position: absolute;
+            top: calc(100% - 65px);
+            width: 95%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <div class="just-scroll-with-it">
+        <div>
+            <input type="range" id="bardensity" name="bardensity" list="values" value="0" /><br />
+            <label for="bardensity">tune up to</label>
+            <datalist id="values">
+                <option value="0" label=""></option>
+                <option value="25" label=""></option>
+                <option value="50" label=""></option>
+                <option value="75" label=""></option>
+                <option value="100" label="11"></option>
+            </datalist>
+        </div>
+        <button style="margin-left: 10px" onclick="scrollsCleanup(); scrollIt()">Just Scroll It!</button>
+        <button style="margin-left: auto" onclick="scrollsCleanup(); normalScrollbarChart()">Normal Scrollbar Chart</button>
+    </div>
+
+</body>
+
+</html>
