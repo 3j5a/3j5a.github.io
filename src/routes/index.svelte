@@ -5,9 +5,8 @@
 
 <main>
     <section class="pages">
-        <PageLink page="wayback" title="way back"/>
-        <PageLink page="runtimes" title="runtimes"/>
         <PageLink page="why" title="why"/>
+        <PageLink page="runtimes" title="runtimes"/> 
         <PageLink page="bitbybyte" title="bit by byte"/>
         <PageLink page="typed" title="typed"/>
         <PageLink page="threads" title="threads"/>
